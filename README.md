@@ -19,6 +19,7 @@ Special thanks to Gemma Lesterhuis ([Lesterhuis Training & Consultancy](https://
 - Global settings
 - GDPR provider
 - Separate login page `/local/oauthdirectsso/login.php`
+- Redirect can be passed by adding `?wantsurl=https://moodle.lms.nl/course/view.php?id=1` 
 
 ## Installation
 1.  Copy this plugin to the `local\oauthdirectsso` folder on the server
