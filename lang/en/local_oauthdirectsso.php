@@ -26,7 +26,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$string['pluginname'] = 'Oauthdirect SSO';
+$string['pluginname'] = 'OATH direct SSO';
 $string['privacy:metadata'] = 'This plugin doesn\'t save any user information';
 
 // Settings.

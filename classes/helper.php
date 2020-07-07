@@ -41,7 +41,7 @@ defined('MOODLE_INTERNAL') || die;
 class helper {
 
     /**
-     *
+     * Not used??
      */
     public static function store_wantsurl() : void {
         global $SESSION, $CFG;
