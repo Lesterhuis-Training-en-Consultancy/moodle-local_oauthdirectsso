@@ -34,10 +34,17 @@ $PAGE->set_url('/local/oauthdirectsso/login.php' , [
 ]);
 $PAGE->set_context(context_system::instance());
 
+
 // Check IP.
-if (\local_oauthdirectsso\helper::has_valid_ipaddress() === false) {
-    print_error('error:invalid_ip' , 'local_oauthdirectsso');
-}
+//if (\local_oauthdirectsso\helper::has_valid_ipaddress() === false) {
+    /** @var local_oauthdirectsso_renderer $renderer **/
+    $renderer = $PAGE->get_renderer('local_oauthdirectsso');
+
+    echo $OUTPUT->header();
+    echo $renderer->render_error_blocked();
+    echo $OUTPUT->footer();
+    exit;
+//}
 
 if (isloggedin()) {
     \local_oauthdirectsso\helper::redirect_loggedin();

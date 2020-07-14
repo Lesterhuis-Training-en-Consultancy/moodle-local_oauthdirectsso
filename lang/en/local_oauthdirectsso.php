@@ -34,3 +34,9 @@ $string['setting:url'] = 'Redirect url';
 $string['setting:url_desc'] = 'The redirect url is the URL of the OATH2 service taht is being used and that needs to be followed without <b>&wantsurl</b> and <b>&sesskey</b>';
 $string['setting:restrict_ip_addresses'] = 'Restrict IP addresses';
 $string['setting:restrict_ip_addresses_desc'] = 'CSV comma formatted IP addresses';
+
+// Errors.
+$string['error:invalid_ip'] = 'You cannot log in with this URL because you are not on the correct network.';
+
+// Buttons.
+$string['btn:back'] = 'Back';

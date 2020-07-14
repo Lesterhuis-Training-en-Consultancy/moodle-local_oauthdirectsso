@@ -34,3 +34,9 @@ $string['setting:url'] = 'Redirect url';
 $string['setting:url_desc'] = 'De redirect URL is de URL van de OATH2 service, zonder <b>&wantsurl</b> en <b>&sesskey</b>.';
 $string['setting:restrict_ip_addresses'] = 'Beperkte IP-adressen';
 $string['setting:restrict_ip_addresses_desc'] = 'CSV format komma gescheidde IP adressen';
+
+$string['error:invalid_ip'] = 'Je mag met deze URL niet inloggen omdat je niet op het netwerk zit dat is ingesteld.
+ Klik hieronder om terug te gaan naar de standaard Moodle login pagina';
+
+// Buttons.
+$string['btn:back'] = 'Terug';
