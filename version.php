@@ -26,6 +26,6 @@
 
 $plugin->release = '3.9.0';
 $plugin->maturity = MATURITY_BETA;
-$plugin->version = 2020071400;        // The current module version (Date: YYYYMMDDXX).
+$plugin->version = 2020071600;        // The current module version (Date: YYYYMMDDXX).
 $plugin->requires = 2015050500;    // Requires this Moodle version.
 $plugin->component = 'local_oauthdirectsso'; // Full name of the plugin (used for diagnostics).
