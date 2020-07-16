@@ -36,7 +36,7 @@ $PAGE->set_context(context_system::instance());
 
 
 // Check IP.
-//if (\local_oauthdirectsso\helper::has_valid_ipaddress() === false) {
+if (\local_oauthdirectsso\helper::has_valid_ipaddress() === false) {
     /** @var local_oauthdirectsso_renderer $renderer **/
     $renderer = $PAGE->get_renderer('local_oauthdirectsso');
 
@@ -44,7 +44,7 @@ $PAGE->set_context(context_system::instance());
     echo $renderer->render_error_blocked();
     echo $OUTPUT->footer();
     exit;
-//}
+}
 
 if (isloggedin()) {
     \local_oauthdirectsso\helper::redirect_loggedin();
