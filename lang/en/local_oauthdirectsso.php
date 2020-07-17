@@ -36,7 +36,7 @@ $string['setting:restrict_ip_addresses'] = 'Restrict IP addresses';
 $string['setting:restrict_ip_addresses_desc'] = 'CSV comma formatted IP addresses';
 
 // Errors.
-$string['error:invalid_ip'] = 'You cannot log in with this URL because you are not on the correct network.';
+$string['error:invalid_ip'] = 'You cannot log in with this URL because you are not on the correct network. Please press the button below to return to the Moodle login page. Your IP adress is:';
 
 // Buttons.
 $string['btn:back'] = 'Back';
