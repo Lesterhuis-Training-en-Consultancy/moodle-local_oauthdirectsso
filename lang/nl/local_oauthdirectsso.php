@@ -36,7 +36,7 @@ $string['setting:restrict_ip_addresses'] = 'Beperkte IP-adressen';
 $string['setting:restrict_ip_addresses_desc'] = 'CSV format komma gescheidde IP adressen';
 
 $string['error:invalid_ip'] = 'Je mag met deze URL niet inloggen omdat je niet op het netwerk zit dat is ingesteld.
- Klik hieronder om terug te gaan naar de standaard Moodle login pagina'. Het IP adres waarmee je probeert in te loggen is:;
+ Klik hieronder om terug te gaan naar de standaard Moodle login pagina. Het IP adres waarmee je probeert in te loggen is:';
 
 // Buttons.
 $string['btn:back'] = 'Terug';
