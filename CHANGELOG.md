@@ -28,6 +28,11 @@ Types of changes
 * **Fixed** for any bug fixes.
 * **Security** in case of vulnerabilities.
 
+# Version (3.9) - 2020-12-15
+
+### Fixed
+- Wantsurl was not working when already logged in
+
 # Version (3.9) - 2020-07-02
 
 ### Added

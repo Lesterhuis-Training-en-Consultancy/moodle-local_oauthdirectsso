@@ -47,7 +47,7 @@ if (\local_oauthdirectsso\helper::has_valid_ipaddress() === false) {
 }
 
 if (isloggedin()) {
-    \local_oauthdirectsso\helper::redirect_loggedin();
+    \local_oauthdirectsso\helper::redirect_loggedin($wantsurl);
 }
 
 $url = \local_oauthdirectsso\helper::get_url();

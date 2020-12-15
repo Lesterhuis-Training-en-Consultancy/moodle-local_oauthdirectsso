@@ -102,10 +102,16 @@ class helper {
     /**
      * Redirect loggedin users
      *
+     * @param string $wantsurl
+     *
      * @throws \moodle_exception
      */
-    public static function redirect_loggedin() : void {
+    public static function redirect_loggedin(string $wantsurl = '') : void {
         global $SESSION;
+
+        if(!empty($wantsurl)){
+            redirect($wantsurl);
+        }
 
         if (!empty($SESSION->wantsurl)) {
             redirect($SESSION->wantsurl);
