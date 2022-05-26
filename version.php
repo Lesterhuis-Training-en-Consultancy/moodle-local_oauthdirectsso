@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This plugin is being used for Moodle Open Source LMS - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -17,15 +17,15 @@
 /**
  * Version information
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   moodle-local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  **/
 
-$plugin->release = '3.9.0';
+$plugin->release = '4.0.0';
 $plugin->maturity = MATURITY_BETA;
-$plugin->version = 2020121500;        // The current module version (Date: YYYYMMDDXX).
+$plugin->version = 2022052600;        // The current module version (Date: YYYYMMDDXX).
 $plugin->requires = 2015050500;    // Requires this Moodle version.
 $plugin->component = 'local_oauthdirectsso'; // Full name of the plugin (used for diagnostics).
