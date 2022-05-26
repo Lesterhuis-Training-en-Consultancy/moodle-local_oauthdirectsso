@@ -29,8 +29,8 @@ Special thanks to Gemma Lesterhuis ([Lesterhuis Training & Consultancy](https://
 
 ## Security
 
-If you discover any security related issues, please email [luuk@MFreak.nl](mailto:luuk@MFreak.nl) instead of using the issue tracker.
+If you discover any security related issues, please email [servicedesk@ltnc.nl](mailto:servicedesk@ltnc.nl) instead of using the issue tracker.
 
 ## License
 
-The GNU GENERAL PUBLIC LICENSE. Please see [License File](LICENSE.md) for more information.
+Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
