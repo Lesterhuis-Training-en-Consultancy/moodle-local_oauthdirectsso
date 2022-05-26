@@ -28,6 +28,11 @@ Types of changes
 * **Fixed** for any bug fixes.
 * **Security** in case of vulnerabilities.
 
+# Version (4.0) - 2022-05-26
+- Tested PHP 7.4
+- Tested Moodle 4.0
+- version Bump
+
 # Version (3.9) - 2020-12-15
 
 ### Fixed
