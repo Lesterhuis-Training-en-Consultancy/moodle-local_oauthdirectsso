@@ -10,7 +10,7 @@ Special thanks to Gemma Lesterhuis ([Lesterhuis Training & Consultancy](https://
 * Author: Luuk Verhoeven, [MFreak.nl](https://MFreak.nl/)
 * Author: Gemma Lesterhuis, [Lesterhuis Training & Consultancy](https://ltnc.nl/)
 * Min. required: Moodle 3.9.x
-* Supports PHP: 7.2
+* Supports PHP: 7.2,7.3,7.4
 
 ![Moodle39](https://img.shields.io/badge/moodle-3.9-brightgreen.svg)
 ![PHP7.2](https://img.shields.io/badge/PHP-7.2-brightgreen.svg)
