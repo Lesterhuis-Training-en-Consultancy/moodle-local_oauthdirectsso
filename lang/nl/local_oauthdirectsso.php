@@ -26,12 +26,12 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$string['pluginname'] = 'OATH direct SSO';
+$string['pluginname'] = 'Oauth2 direct SSO';
 $string['privacy:metadata'] = 'Deze plugin bewaard geen gebruikersinformatie.';
 
 // Settings.
 $string['setting:url'] = 'Redirect url';
-$string['setting:url_desc'] = 'De redirect URL is de URL van de OATH2 service, zonder <b>&wantsurl</b> en <b>&sesskey</b>.';
+$string['setting:url_desc'] = 'De redirect URL is de URL van de Oauth2 service, zonder <b>&wantsurl</b> en <b>&sesskey</b>.';
 $string['setting:restrict_ip_addresses'] = 'Beperkte IP-adressen';
 $string['setting:restrict_ip_addresses_desc'] = 'CSV format komma gescheidde IP adressen';
 
