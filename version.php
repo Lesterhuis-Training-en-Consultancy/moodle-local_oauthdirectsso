@@ -24,8 +24,8 @@
  * @author    Luuk Verhoeven
  **/
 
-$plugin->release = '4.0.0';
+$plugin->release = '4.1.0';
 $plugin->maturity = MATURITY_BETA;
-$plugin->version = 2022052600;        // The current module version (Date: YYYYMMDDXX).
+$plugin->version = 2023041300;        // The current module version (Date: YYYYMMDDXX).
 $plugin->requires = 2015050500;    // Requires this Moodle version.
 $plugin->component = 'local_oauthdirectsso'; // Full name of the plugin (used for diagnostics).
