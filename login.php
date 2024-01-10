@@ -19,25 +19,25 @@
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  **/
+
 require_once(__DIR__ . '/../../config.php');
 defined('MOODLE_INTERNAL') || die;
 
-$wantsurl = optional_param('wantsurl' , $CFG->wwwroot , PARAM_URL);
+$wantsurl = optional_param('wantsurl', $CFG->wwwroot, PARAM_URL);
 $sesskey = sesskey();
 
-$PAGE->set_url('/local/oauthdirectsso/login.php' , [
-    'wantsurl' => $wantsurl
+$PAGE->set_url('/local/oauthdirectsso/login.php', [
+    'wantsurl' => $wantsurl,
 ]);
 $PAGE->set_context(context_system::instance());
 
-
 // Check IP.
-if (\local_oauthdirectsso\helper::has_valid_ipaddress() === false) {
-    /** @var local_oauthdirectsso_renderer $renderer **/
+if (!\local_oauthdirectsso\helper::has_valid_ipaddress()) {
+
     $renderer = $PAGE->get_renderer('local_oauthdirectsso');
 
     echo $OUTPUT->header();
@@ -51,9 +51,10 @@ if (isloggedin()) {
 }
 
 $url = \local_oauthdirectsso\helper::get_url();
-$url->param('sesskey' , $sesskey);
-if(!empty($wantsurl)){
-    $url->param('wantsurl' , $wantsurl);
+$url->param('sesskey', $sesskey);
+
+if (!empty($wantsurl)) {
+    $url->param('wantsurl', $wantsurl);
 }
 
 redirect($url);

@@ -19,24 +19,50 @@
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  **/
 
 defined('MOODLE_INTERNAL') || die;
 
-$string['pluginname'] = 'Oauth2 direct SSO';
+// Default.
+$string['pluginname'] = 'Oauth 2 direct SSO';
 $string['privacy:metadata'] = 'This plugin doesn\'t save any user information';
 
 // Settings.
 $string['setting:url'] = 'Redirect url';
-$string['setting:url_desc'] = 'The redirect url is the URL of the OATH2 service taht is being used and that needs to be followed without <b>&wantsurl</b> and <b>&sesskey</b>';
-$string['setting:restrict_ip_addresses'] = 'Restrict IP addresses';
-$string['setting:restrict_ip_addresses_desc'] = 'CSV comma formatted IP addresses';
-
-// Errors.
-$string['error:invalid_ip'] = 'You cannot log in with this URL because you are not on the correct network. Please press the button below to return to the Moodle login page. Your IP adress is:';
+$string['setting:url_desc'] = 'The redirect url is the URL of the OATH2 service that is being used and that needs to be followed without <b>&wantsurl</b> and <b>&sesskey</b>';
 
 // Buttons.
 $string['btn:back'] = 'Back';
+$string['btn:confirm'] = 'Confirm';
+$string['btn:cancel'] = 'Cancel';
+
+// Views.
+$string['view:oauth'] = 'OAuth 2 overview';
+
+// Forms.
+$string['form:select_oauth'] = 'Select OAuth 2 service';
+$string['form:restrict_ip_addresses'] = 'Restrict IP addresses';
+$string['form:restrict_ip_addresses_desc'] = 'CSV comma formatted IP addresses';
+$string['form:no_oauths'] = 'No OAuth services are left for selection';
+
+// Tables.
+$string['heading:table_name'] = 'OAuth name';
+$string['heading:table_redirecturl'] = 'Redirect url';
+$string['heading:table_iprestrictions'] = 'Restricted IP addresses';
+$string['heading:table_actions'] = 'Actions';
+
+// Mustache.
+$string['mustache:add_directsso'] = 'Add OAuth 2 direct SSO';
+
+// JS.
+$string['js:confirm_title'] = 'Confirm action';
+$string['js:confirm_delete'] = 'Are you sure you want to delete this?';
+
+// Errors.
+$string['error:invalid_ip'] = 'You cannot log in with this URL because you are not on the correct network. Please press the button below to return to the Moodle login page. Your IP adress is:';
+$string['error:no_config_found'] = 'No OAuth configuration found';
+$string['error:incorrect_field'] = 'Incorrect OAuth configuration field specified';
+$string['error:invalid_ips'] = 'Invalid list of IP addresses provided';
