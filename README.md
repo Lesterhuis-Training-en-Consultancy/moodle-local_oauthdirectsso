@@ -10,13 +10,13 @@ Special thanks to Gemma Lesterhuis ([Lesterhuis Training & Consultancy](https://
 * Author: Luuk Verhoeven, [MFreak.nl](https://ldesignmedia.nl/)
 * Author: Gemma Lesterhuis, [Lesterhuis Training & Consultancy](https://ltnc.nl/)
 * Min. required: Moodle 3.9.x
-* Supports PHP: 7.4 trough 8.1
+* Supports PHP: 7.4 trough 8.2
 
 ![Moodle39](https://img.shields.io/badge/moodle-3.9-brightgreen.svg)
 ![Moodle42](https://img.shields.io/badge/moodle-4.2-brightgreen.svg)
 
 ![PHP7.4](https://img.shields.io/badge/PHP-7.4-brightgreen.svg)
-![PHP8.1](https://img.shields.io/badge/PHP-8.1-brightgreen.svg)
+![PHP8.2](https://img.shields.io/badge/PHP-8.2-brightgreen.svg)
 
 ## List of features
 - Overview and settings can be found under the 'Server' tab in admin settings (Oauth 2 direct SSO).
