@@ -57,8 +57,8 @@ class oauth_overview_table extends table_sql {
 
         $this->sql = new stdClass();
         $this->sql->fields = 'oi.id, oi.name, oc.iprestrictions, oc.disabled';
-        $this->sql->from = '{local_oauthdirectsso_config} oc
-                            LEFT JOIN {oauth2_issuer} oi ON oi.id = oc.oauthissuerid';
+        $this->sql->from = '{oauth2_issuer} oi
+                            JOIN {local_oauthdirectsso_config} oc ON oc.oauthissuerid = oi.id';
         $this->sql->where = '1=1';
         $this->sql->params = [];
 
@@ -73,7 +73,7 @@ class oauth_overview_table extends table_sql {
      * @return string
      */
     public function col_redirecturl(object $row): string {
-        return (new moodle_url('/auth/oauth2/login.php', ['id' => $row->id]))->out(false);
+        return (new moodle_url('/local/oauthdirectsso/login.php', ['id' => $row->id]))->out(false);
     }
 
     /**
