@@ -95,6 +95,19 @@ class oauth_config {
     }
 
     /**
+     * Check if the OAuth itself exists.
+     *
+     * @param int $oauthissuerid
+     *
+     * @return bool
+     */
+    private static function oauth_exists(int $oauthissuerid): bool {
+        global $DB;
+
+        return $DB->record_exists('oauth2_issuer', ['id' => $oauthissuerid]);
+    }
+
+    /**
      * Update a value of a given field.
      *
      * @param int $oauthissuerid
@@ -188,6 +201,12 @@ class oauth_config {
 
         if (empty($oauthconfig)) {
             return get_string('error:no_config_found', 'local_oauthdirectsso');
+        }
+
+        if (!self::oauth_exists($oauthissuerid)) {
+            // We can remove the config for the OAuth provider if it doesn't exist anymore.
+            self::delete_oauthconfig($oauthissuerid);
+            return get_string('error:oauth_doesnt_exist', 'local_oauthdirectsso');
         }
 
         if ($oauthconfig->disabled) {
