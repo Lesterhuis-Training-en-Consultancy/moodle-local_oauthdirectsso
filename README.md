@@ -1,25 +1,38 @@
 ## local_oauthdirectsso
 
-In brief, the MFreak mod `local_oauthdirectsso` redirects not logged users to a specific login url.
+In brief, the Ldesign `local_oauthdirectsso` redirects not logged users to a specific OAuth 2 login url.
  
 Special thanks to Gemma Lesterhuis ([Lesterhuis Training & Consultancy](https://ltnc.nl/)) for develop & design, useful input, bug reports and beta testing
 
-![MFreak.nl](https://MFreak.nl/logo_small.png)
-![Lesterhuis Training & Consultancy](https://MFreak.nl/logo_small_ltnc.png)
+![Ldesignmedia.nl](https://ldesignmedia.nl/logo_small.png)
+![Lesterhuis Training & Consultancy](https://ldesignmedia.nl/logo_small_ltnc.png)
 
-* Author: Luuk Verhoeven, [MFreak.nl](https://MFreak.nl/)
+* Author: Luuk Verhoeven, [MFreak.nl](https://ldesignmedia.nl/)
 * Author: Gemma Lesterhuis, [Lesterhuis Training & Consultancy](https://ltnc.nl/)
 * Min. required: Moodle 3.9.x
-* Supports PHP: 7.2,7.3,7.4
+* Supports PHP: 7.4 trough 8.1
 
 ![Moodle39](https://img.shields.io/badge/moodle-3.9-brightgreen.svg)
-![PHP7.2](https://img.shields.io/badge/PHP-7.2-brightgreen.svg)
+![Moodle42](https://img.shields.io/badge/moodle-4.2-brightgreen.svg)
+
+![PHP7.4](https://img.shields.io/badge/PHP-7.4-brightgreen.svg)
+![PHP8.1](https://img.shields.io/badge/PHP-8.1-brightgreen.svg)
 
 ## List of features
-- Global settings
+- Overview and settings can be found under the 'Server' tab in admin settings (Oauth 2 direct SSO).
 - GDPR provider
-- Separate login page `/local/oauthdirectsso/login.php`
-- Redirect can be passed by adding `?wantsurl=https://moodle.lms.nl/course/view.php?id=1` 
+- Separate login page `/local/oauthdirectsso/login.php?id=x` where `x` will be replaced with the linked OAuth service id
+- Redirect can be passed by adding `&wantsurl=https://moodle.lms.nl/course/view.php?id=1`
+- IP restrictions can be set for each OAuth provider.
+    - This goes to the Moodle core `address_in_subnet()` function specifications:
+      - 1: `xxx.xxx.xxx.xxx/nn` or `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx/nnn`          (number of bits in net mask)
+      - 2: `xxx.xxx.xxx.xxx-yyy` or  `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx::xxxx-yyyy` (a range of IP addresses in the last group)
+      - 3: `xxx.xxx or xxx.xxx.` or `xxx:xxx:xxxx` or `xxx:xxx:xxxx.`                (incomplete address, a bit non-technical ;-)
+
+![Admin](pix/admin.png)
+![Overview](pix/overview.png)
+![Add](pix/add.png)
+
 
 ## Installation
 1.  Copy this plugin to the `local\oauthdirectsso` folder on the server
