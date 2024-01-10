@@ -67,3 +67,4 @@ $string['error:no_config_found'] = 'No OAuth configuration found';
 $string['error:incorrect_field'] = 'Incorrect OAuth configuration field specified';
 $string['error:invalid_ips'] = 'Invalid list of IP addresses provided';
 $string['error:config_disabled'] = 'OAuth configuration has been disabled';
+$string['error:oauth_doesnt_exist'] = 'OAuth provider does not exist';

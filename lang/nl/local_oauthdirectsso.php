@@ -68,3 +68,4 @@ $string['error:no_config_found'] = 'Geen OAuth configuratie gevonden';
 $string['error:incorrect_field'] = 'Incorrect OAuth configuratie veld gespecificeerd';
 $string['error:invalid_ips'] = 'Ongeldige opmaak van IP adressen';
 $string['error:config_disabled'] = 'OAuth configuratie is uitgeschakeld';
+$string['error:oauth_doesnt_exist'] = 'OAuth provider bestaat niet';
