@@ -17,7 +17,7 @@
 /**
  * Oauth overview table
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   local_oauthdirectsso
  * @copyright 09/01/2024 LdesignMedia.nl - Luuk Verhoeven
@@ -40,7 +40,7 @@ require_once($CFG->libdir . '/tablelib.php');
 /**
  * Class auth_overview_table
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   local_oauthdirectsso
  * @copyright 09/01/2024 LdesignMedia.nl - Luuk Verhoeven

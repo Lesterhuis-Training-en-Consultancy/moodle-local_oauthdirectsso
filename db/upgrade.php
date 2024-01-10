@@ -17,14 +17,21 @@
 /**
  * Upgrade executions
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   local_oauthdirectsso
  * @copyright 09/01/2024 LdesignMedia.nl - Luuk Verhoeven
  * @author    Vincent Cornelis
  **/
 
-function xmldb_local_oauthdirectsso_upgrade(int $oldversion) {
+/**
+ * Executes during upgrade
+ *
+ * @param int $oldversion
+ *
+ * @return bool
+ */
+function xmldb_local_oauthdirectsso_upgrade(int $oldversion): bool {
     global $DB;
     $dbman = $DB->get_manager();
 

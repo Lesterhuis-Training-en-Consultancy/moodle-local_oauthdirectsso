@@ -17,7 +17,7 @@
 /**
  * Oauth configuration edit form
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   moodle-local_oauthdirectsso
  * @copyright 10/01/2024 LdesignMedia.nl - Luuk Verhoeven
@@ -33,7 +33,7 @@ use moodleform;
 /**
  * Class oauth_edit_form
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   moodle-local_oauthdirectsso
  * @copyright 10/01/2024 LdesignMedia.nl - Luuk Verhoeven
@@ -74,6 +74,7 @@ class oauth_edit_form extends moodleform {
                 '',
                 get_string('form:restrict_ip_addresses_desc', 'local_oauthdirectsso'),
             );
+
         } else {
 
             $mform->addElement(
@@ -108,6 +109,8 @@ class oauth_edit_form extends moodleform {
     }
 
     /**
+     * Form validation
+     *
      * @param array $data
      * @param array $files
      *

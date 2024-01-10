@@ -17,7 +17,7 @@
 /**
  * Implements the null provider
  *
- *@license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
@@ -25,12 +25,11 @@
  **/
 
 namespace local_oauthdirectsso\privacy;
-defined('MOODLE_INTERNAL') || die;
 
 /**
  * Privacy Subsystem for local_quizmonitor implementing null_provider.
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven

@@ -17,7 +17,7 @@
 /**
  * OAuth overview page
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   local_oauthdirectsso
  * @copyright 08/01/2024 LdesignMedia.nl - Luuk Verhoeven
@@ -34,7 +34,7 @@ use templatable;
 /**
  * Class oauth_overview
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   local_oauthdirectsso
  * @copyright 08/01/2024 LdesignMedia.nl - Luuk Verhoeven

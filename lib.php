@@ -19,7 +19,7 @@ use local_oauthdirectsso\oauth_config;
 /**
  * Lib functions
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   local_oauthdirectsso
  * @copyright 10/01/2024 LdesignMedia.nl - Luuk Verhoeven
