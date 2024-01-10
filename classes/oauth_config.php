@@ -180,9 +180,9 @@ class oauth_config {
      *
      * @param int $oauthissuerid
      *
-     * @return \lang_string|string|void
+     * @return string|null
      */
-    public static function check_configuration_requirements(int $oauthissuerid) {
+    public static function check_configuration_requirements(int $oauthissuerid): ?string {
 
         $oauthconfig = self::get_oauthconfig($oauthissuerid);
 
@@ -197,6 +197,8 @@ class oauth_config {
         if (!helper::has_valid_ipaddress($oauthissuerid)) {
             return get_string('error:invalid_ip', 'local_oauthdirectsso') . ' [' . getremoteaddr() . ']';
         }
+
+        return null;
     }
 
 }
