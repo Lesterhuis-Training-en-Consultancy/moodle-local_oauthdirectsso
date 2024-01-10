@@ -22,6 +22,6 @@
 }}
 
 <section>
-    <div class="alert alert-danger">{{# str}} error:invalid_ip, local_oauthdirectsso {{/ str}} [{{ipaddress}}]</div>
-    <a class="btn btn-primary" href="/login/index.php">{{# str}} btn:back, local_oauthdirectsso {{/ str}}</a>
+    <div class="alert alert-danger">{{error}}</div>
+    <a class="btn btn-primary" href="/login/index.php">{{#str}} btn:back, local_oauthdirectsso {{/str}}</a>
 </section>

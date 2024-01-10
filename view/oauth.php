@@ -73,6 +73,13 @@ switch ($action) {
         oauth_config::update_value($id, 'disabled', $value);
         $url->remove_all_params();
         redirect($url);
+        break;
+
+    case 'delete':
+        oauth_config::delete_oauthconfig($id);
+        $url->remove_all_params();
+        redirect($url);
+        break;
 
     default:
         $page = new oauth_overview();

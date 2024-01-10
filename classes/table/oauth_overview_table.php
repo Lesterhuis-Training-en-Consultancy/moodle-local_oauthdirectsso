@@ -49,7 +49,7 @@ require_once($CFG->libdir . '/tablelib.php');
 class oauth_overview_table extends table_sql {
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param string $uniqueid
      */
@@ -66,7 +66,7 @@ class oauth_overview_table extends table_sql {
     }
 
     /**
-     * Get the corresponding redirect url
+     * Get the corresponding redirect url.
      *
      * @param object $row
      *
@@ -77,7 +77,7 @@ class oauth_overview_table extends table_sql {
     }
 
     /**
-     * Editable IP restrictions
+     * Editable IP restrictions.
      *
      * @param object $row
      *
@@ -100,7 +100,7 @@ class oauth_overview_table extends table_sql {
     }
 
     /**
-     * Get actions that can be performed for the row
+     * Get actions that can be performed for the row.
      *
      * @param object $row
      *

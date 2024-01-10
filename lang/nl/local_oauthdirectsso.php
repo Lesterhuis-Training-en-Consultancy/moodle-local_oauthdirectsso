@@ -49,10 +49,10 @@ $string['form:restrict_ip_addresses_desc'] = 'CSV format komma gescheidde IP adr
 $string['form:no_oauths'] = 'Er zijn geen OAuth services meer om te selecteren';
 
 // Tables.
-$string['heading:table_name'] = 'OAuth name';
+$string['heading:table_name'] = 'OAuth naam';
 $string['heading:table_redirecturl'] = 'Redirect url';
-$string['heading:table_iprestrictions'] = 'Restricted IP addresses';
-$string['heading:table_actions'] = 'Actions';
+$string['heading:table_iprestrictions'] = 'Beperkte IP adressen';
+$string['heading:table_actions'] = 'Acties';
 
 // Mustache.
 $string['mustache:add_directsso'] = 'Voeg OAuth 2 direct SSO toe';
@@ -66,3 +66,5 @@ $string['error:invalid_ip'] = 'Je mag met deze URL niet inloggen omdat je niet o
  Klik hieronder om terug te gaan naar de standaard Moodle login pagina. Het IP adres waarmee je probeert in te loggen is:';
 $string['error:no_config_found'] = 'Geen OAuth configuratie gevonden';
 $string['error:incorrect_field'] = 'Incorrect OAuth configuratie veld gespecificeerd';
+$string['error:invalid_ips'] = 'Ongeldige opmaak van IP adressen';
+$string['error:config_disabled'] = 'OAuth configuratie is uitgeschakeld';

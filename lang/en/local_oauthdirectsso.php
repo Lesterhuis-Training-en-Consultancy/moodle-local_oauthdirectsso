@@ -66,3 +66,4 @@ $string['error:invalid_ip'] = 'You cannot log in with this URL because you are n
 $string['error:no_config_found'] = 'No OAuth configuration found';
 $string['error:incorrect_field'] = 'Incorrect OAuth configuration field specified';
 $string['error:invalid_ips'] = 'Invalid list of IP addresses provided';
+$string['error:config_disabled'] = 'OAuth configuration has been disabled';

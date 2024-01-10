@@ -27,6 +27,7 @@
 namespace local_oauthdirectsso;
 
 use moodle_exception;
+use moodle_url;
 
 /**
  * Class oauth_config
@@ -39,6 +40,9 @@ use moodle_exception;
  **/
 class oauth_config {
 
+    /**
+     * The OAuth configuration table.
+     */
     public const TABLE = 'local_oauthdirectsso_config';
 
     /**
@@ -48,11 +52,11 @@ class oauth_config {
      *
      * @return void
      */
-    public static function create_oauthconfig(object $data) {
+    public static function create_oauthconfig(object $data): void {
         global $DB;
 
         // Nothing to create if no issuer id has been provided.
-        if (!isset($data->issuerid)) {
+        if (!isset($data->oauthissuerid)) {
             return;
         }
 
@@ -61,6 +65,19 @@ class oauth_config {
 
         $DB->insert_record(self::TABLE, $data);
 
+    }
+
+    /**
+     * Delete an Oauth configuration.
+     *
+     * @param int $oauthissuerid
+     *
+     * @return void
+     */
+    public static function delete_oauthconfig(int $oauthissuerid): void {
+        global $DB;
+
+        $DB->delete_records(self::TABLE, ['oauthissuerid' => $oauthissuerid]);
     }
 
     /**
@@ -126,6 +143,60 @@ class oauth_config {
         }
 
         return true;
+    }
+
+    /**
+     * Get OAuth ip addresses.
+     *
+     * @param int $oauthissuerid
+     *
+     * @return false|mixed
+     */
+    public static function get_ipaddresses(int $oauthissuerid) {
+        global $DB;
+
+        return $DB->get_field(self::TABLE, 'iprestrictions', ['oauthissuerid' => $oauthissuerid]);
+    }
+
+    /**
+     * Get URL to the actual OAuth method.
+     *
+     * @param int $oauthissuerid
+     *
+     * @return moodle_url
+     */
+    public static function get_oauth_url(int $oauthissuerid): moodle_url {
+
+        return new moodle_url(
+            '/auth/oauth2/login.php',
+            [
+                'id' => $oauthissuerid,
+            ]
+        );
+    }
+
+    /**
+     * Check if all configuration requirements are met.
+     *
+     * @param int $oauthissuerid
+     *
+     * @return \lang_string|string|void
+     */
+    public static function check_configuration_requirements(int $oauthissuerid) {
+
+        $oauthconfig = self::get_oauthconfig($oauthissuerid);
+
+        if (empty($oauthconfig)) {
+            return get_string('error:no_config_found', 'local_oauthdirectsso');
+        }
+
+        if ($oauthconfig->disabled) {
+            return get_string('error:config_disabled', 'local_oauthdirectsso');
+        }
+
+        if (!helper::has_valid_ipaddress($oauthissuerid)) {
+            return get_string('error:invalid_ip', 'local_oauthdirectsso') . ' [' . getremoteaddr() . ']';
+        }
     }
 
 }

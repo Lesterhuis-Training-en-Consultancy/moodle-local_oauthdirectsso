@@ -40,17 +40,9 @@ function local_oauthdirectsso_inplace_editable(string $itemtype, int $itemid, $n
 
     $PAGE->set_context(context_system::instance());
 
-    // Store new value to $value to keep information on error message display.
-    $value = $newvalue;
-
     // Ip restrictions need to be stored.
     if (strpos($itemtype, 'iprestrictions-oauthid-') === 0) {
-
-        if (!empty($newvalue) && !oauth_config::valid_ips($newvalue)) {
-            $newvalue = get_string('error:invalid_ips', 'local_oauthdirectsso');
-        } else {
-            oauth_config::update_value($itemid, 'iprestrictions', $newvalue);
-        }
+        oauth_config::update_value($itemid, 'iprestrictions', $newvalue);
     }
 
     return new inplace_editable(
@@ -59,7 +51,7 @@ function local_oauthdirectsso_inplace_editable(string $itemtype, int $itemid, $n
         $itemid,
         true,
         $newvalue,
-        $value,
+        $newvalue,
     );
 
 }

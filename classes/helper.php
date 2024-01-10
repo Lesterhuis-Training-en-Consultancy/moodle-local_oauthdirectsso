@@ -62,29 +62,15 @@ class helper {
     }
 
     /**
-     * Get OAUTH url
+     * Check if a user has a matching IP.
      *
-     * @return moodle_url
-     * @throws \dml_exception
-     * @throws \moodle_exception
-     */
-    public static function get_url(): moodle_url {
-        $url = get_config('local_oauthdirectsso', 'url');
-        if (empty($url)) {
-            $url = '#';
-        }
-
-        return new moodle_url($url);
-    }
-
-    /**
-     * Check if a user has a matching IP
+     * @param int $oauthissuerid
      *
      * @return bool
-     * @throws \dml_exception
      */
-    public static function has_valid_ipaddress(): bool {
-        $ipaddresses = get_config('local_oauthdirectsso', 'restrict_ip_addresses');
+    public static function has_valid_ipaddress(int $oauthissuerid): bool {
+
+        $ipaddresses = oauth_config::get_ipaddresses($oauthissuerid);
 
         if (empty($ipaddresses)) {
             return true;
@@ -101,7 +87,7 @@ class helper {
     }
 
     /**
-     * Redirect loggedin users
+     * Redirect loggedin users.
      *
      * @param string $wantsurl
      *

@@ -24,33 +24,36 @@
  * @author    Luuk Verhoeven
  **/
 
+use local_oauthdirectsso\helper;
+use local_oauthdirectsso\oauth_config;
+
 require_once(__DIR__ . '/../../config.php');
 defined('MOODLE_INTERNAL') || die;
 
+$id = required_param('id', PARAM_INT);
 $wantsurl = optional_param('wantsurl', $CFG->wwwroot, PARAM_URL);
 $sesskey = sesskey();
 
 $PAGE->set_url('/local/oauthdirectsso/login.php', [
+    'id' => $id,
     'wantsurl' => $wantsurl,
 ]);
 $PAGE->set_context(context_system::instance());
 
-// Check IP.
-if (!\local_oauthdirectsso\helper::has_valid_ipaddress()) {
-
+if ($error = oauth_config::check_configuration_requirements($id)) {
     $renderer = $PAGE->get_renderer('local_oauthdirectsso');
 
     echo $OUTPUT->header();
-    echo $renderer->render_error_blocked();
+    echo $renderer->render_error($error);
     echo $OUTPUT->footer();
     exit;
 }
 
 if (isloggedin()) {
-    \local_oauthdirectsso\helper::redirect_loggedin($wantsurl);
+    helper::redirect_loggedin($wantsurl);
 }
 
-$url = \local_oauthdirectsso\helper::get_url();
+$url = oauth_config::get_oauth_url($id);
 $url->param('sesskey', $sesskey);
 
 if (!empty($wantsurl)) {

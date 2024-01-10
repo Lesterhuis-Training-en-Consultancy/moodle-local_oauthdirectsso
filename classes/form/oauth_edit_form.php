@@ -108,24 +108,4 @@ class oauth_edit_form extends moodleform {
         return $oauths;
     }
 
-    /**
-     * Form validation
-     *
-     * @param array $data
-     * @param array $files
-     *
-     * @return array
-     */
-    public function validation($data, $files): array {
-
-        $errors = [];
-
-        if (!empty($data['iprestrictions']) && !oauth_config::valid_ips($data['iprestrictions'])) {
-            $errors['iprestrictions'] = get_string('error:invalid_ips', 'local_oauthdirectsso');
-        }
-
-        return $errors;
-
-    }
-
 }

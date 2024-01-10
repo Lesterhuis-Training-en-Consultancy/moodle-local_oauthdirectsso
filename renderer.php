@@ -36,10 +36,12 @@ class local_oauthdirectsso_renderer extends plugin_renderer_base {
     /**
      * Render blocked message
      *
+     * @param string $error
+     *
      * @return string
-     * @throws moodle_exception
      */
-    public function render_error_blocked() : string {
-        return $this->render_from_template('local_oauthdirectsso/blocked', ['ipaddress' => getremoteaddr()]);
+    public function render_error(string $error): string {
+        return $this->render_from_template('local_oauthdirectsso/error', ['error' => $error]);
     }
+
 }

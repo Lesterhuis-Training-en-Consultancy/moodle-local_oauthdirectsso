@@ -43,7 +43,7 @@ use templatable;
 class oauth_overview implements renderable, templatable {
 
     /**
-     * Get the data to export to template
+     * Get the data to export to template.
      *
      * @param renderer_base $output
      *
@@ -60,7 +60,7 @@ class oauth_overview implements renderable, templatable {
     }
 
     /**
-     * Get the OAuth overview table
+     * Get the OAuth overview table.
      *
      * @return false|string
      */
