@@ -16,11 +16,17 @@
 }}
 {{!
     @package local_oauthdirectsso
+    @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
     @copyright 08/01/2024 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
     @author    Luuk Verhoeven
     
-    @template block/table
-    Comment text
+    @template local_oauthdirectsso/oauth_overview
+
+    Example context (json):
+    {
+        "addurl": "https://www.moodlesite.com/local/oauthdirectsso/view/oauth.php?action=add",
+        "table": "<table><tr><td>Row 1, Column 1</td><td>Row 1, Column 2</td></tr><tr><td>Row 2, Column 1</td><td>Row 2, Column 2</td></tr></table>"
+    }
 }}
 
 <a href="{{addurl}}" class="btn btn-primary mb-3">{{#str}} mustache:add_directsso, local_oauthdirectsso {{/str}}</a>

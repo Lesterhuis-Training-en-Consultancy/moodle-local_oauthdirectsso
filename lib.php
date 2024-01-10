@@ -13,8 +13,6 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-use core\output\inplace_editable;
-use local_oauthdirectsso\oauth_config;
 
 /**
  * Lib functions
@@ -25,6 +23,9 @@ use local_oauthdirectsso\oauth_config;
  * @copyright 10/01/2024 LdesignMedia.nl - Luuk Verhoeven
  * @author    Vincent Cornelis
  **/
+
+use core\output\inplace_editable;
+use local_oauthdirectsso\oauth_config;
 
 /**
  * Inplace editable callback

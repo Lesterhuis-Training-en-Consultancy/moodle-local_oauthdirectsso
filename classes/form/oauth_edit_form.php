@@ -19,7 +19,7 @@
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 10/01/2024 LdesignMedia.nl - Luuk Verhoeven
  * @author    Vincent Cornelis
  **/
@@ -35,7 +35,7 @@ use moodleform;
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 10/01/2024 LdesignMedia.nl - Luuk Verhoeven
  * @author    Vincent Cornelis
  **/
