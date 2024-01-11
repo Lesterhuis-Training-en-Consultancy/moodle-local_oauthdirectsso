@@ -93,7 +93,7 @@ class oauth_overview implements renderable, templatable {
         $table->sortable(true, 'name');
         $table->no_sorting('redirecturl');
         $table->no_sorting('iprestrictions');
-        $table->no_sorting('action');
+        $table->no_sorting('actions');
 
         $table->is_downloadable(false);
 
