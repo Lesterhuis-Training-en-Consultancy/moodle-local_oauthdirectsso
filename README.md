@@ -4,10 +4,10 @@ In brief, the MFreak mod `local_oauthdirectsso` redirects not logged users to a 
  
 Special thanks to Gemma Lesterhuis ([Lesterhuis Training & Consultancy](https://ltnc.nl/)) for develop & design, useful input, bug reports and beta testing
 
-![MFreak.nl](https://MFreak.nl/logo_small.png)
-![Lesterhuis Training & Consultancy](https://MFreak.nl/logo_small_ltnc.png)
+![MFreak.nl](https://ldesignmedia.nl/logo_small.png)
+![Lesterhuis Training & Consultancy](https://ldesignmedia.nl/logo_small_ltnc.png)
 
-* Author: Luuk Verhoeven, [MFreak.nl](https://MFreak.nl/)
+* Author: Luuk Verhoeven, [ldesignmedia.nl](https://ldesignmedia.nl/)
 * Author: Gemma Lesterhuis, [Lesterhuis Training & Consultancy](https://ltnc.nl/)
 * Min. required: Moodle 3.9.x
 * Supports PHP: 7.2,7.3,7.4
