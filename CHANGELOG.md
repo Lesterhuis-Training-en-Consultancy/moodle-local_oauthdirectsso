@@ -32,8 +32,9 @@ Types of changes
 - Add support for multiple OAuth providers. 
 - Please be aware this update is a breaking change for environments that already have this plugin installed. 
 For continued access, it is essential to re-select your existing OAuth and the Restricted IP addresses.
-- Tested PHP 8.2
-- 
+- Tested on PHP 8.2
+- Tested in Moodle 4.2
+
 # Version (4.1) - 2023-04-13
 - Tested PHP 8.0
 - Tested Moodle 4.1
