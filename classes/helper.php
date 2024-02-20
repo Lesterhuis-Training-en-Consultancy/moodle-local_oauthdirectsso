@@ -1,5 +1,5 @@
 <?php
-// This plugin is being used for Moodle Open Source LMS - http://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  **/
@@ -31,9 +31,9 @@ use moodle_url;
 /**
  * Helper functions
  *
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  **/
@@ -45,7 +45,7 @@ class helper {
     public static function store_wantsurl(): void {
         global $SESSION, $CFG;
 
-        /// First, let's remember where the user was trying to get to before they got here.
+        // First, let's remember where the user was trying to get to before they got here.
         if (empty($SESSION->wantsurl)) {
             $SESSION->wantsurl = null;
             $referer = get_local_referer(false);
@@ -62,27 +62,15 @@ class helper {
     }
 
     /**
-     * @return moodle_url
-     * @throws \dml_exception
-     * @throws \moodle_exception
-     */
-    public static function get_url(): moodle_url {
-        $url = get_config('local_oauthdirectsso', 'url');
-        if (empty($url)) {
-            $url = '#';
-        }
-
-        return new moodle_url($url);
-    }
-
-    /**
-     * Check if a user has a matching IP
+     * Check if a user has a matching IP.
+     *
+     * @param int $oauthissuerid
      *
      * @return bool
-     * @throws \dml_exception
      */
-    public static function has_valid_ipaddress(): bool {
-        $ipaddresses = get_config('local_oauthdirectsso', 'restrict_ip_addresses');
+    public static function has_valid_ipaddress(int $oauthissuerid): bool {
+
+        $ipaddresses = oauth_config::get_ipaddresses($oauthissuerid);
 
         if (empty($ipaddresses)) {
             return true;
@@ -99,7 +87,7 @@ class helper {
     }
 
     /**
-     * Redirect loggedin users
+     * Redirect loggedin users.
      *
      * @param string $wantsurl
      *

@@ -1,5 +1,5 @@
 <?php
-// This plugin is being used for Moodle Open Source LMS - http://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 14/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  **/
@@ -27,18 +27,21 @@
 /**
  * Class oauthdirectsso renderer.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 14/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  */
 class local_oauthdirectsso_renderer extends plugin_renderer_base {
 
     /**
+     * Render blocked message
+     *
+     * @param string $error
      *
      * @return string
-     * @throws moodle_exception
      */
-    public function render_error_blocked() : string {
-        return $this->render_from_template('local_oauthdirectsso/blocked', ['ipaddress' => getremoteaddr()]);
+    public function render_error(string $error): string {
+        return $this->render_from_template('local_oauthdirectsso/error', ['error' => $error]);
     }
+
 }

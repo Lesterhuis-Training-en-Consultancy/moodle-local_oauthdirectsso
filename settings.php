@@ -1,5 +1,5 @@
 <?php
-// This plugin is being used for Moodle Open Source LMS - http://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -19,25 +19,30 @@
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  **/
+
 defined('MOODLE_INTERNAL') || die;
 
+global $ADMIN;
+
 if ($hassiteconfig) {
-    $settings = new admin_settingpage('local_oauthdirectsso',
-        new lang_string('pluginname', 'local_oauthdirectsso'));
 
-    $settings->add(new admin_setting_configtext('local_oauthdirectsso/url',
-        new lang_string('setting:url', 'local_oauthdirectsso'),
-        new lang_string('setting:url_desc', 'local_oauthdirectsso'),
-        '', PARAM_URL));
+    // Add OAuth overview page to Server tab.
+    $oauthurl = new moodle_url('/local/oauthdirectsso/view/oauth.php');
+    $visiblename = get_string('pluginname', 'local_oauthdirectsso');
 
-    $settings->add(new admin_setting_configtext('local_oauthdirectsso/restrict_ip_addresses',
-        new lang_string('setting:restrict_ip_addresses', 'local_oauthdirectsso'),
-        new lang_string('setting:restrict_ip_addresses_desc', 'local_oauthdirectsso'),
-        '', PARAM_RAW));
+    $oauthexternalpage = new admin_externalpage(
+        'local_oauthdirectsso_oauthview',
+        $visiblename,
+        $oauthurl,
+        'moodle/site:config',
+        false,
+        context_system::instance(),
+    );
 
-    $ADMIN->add('localplugins', $settings);
+    $ADMIN->add('server', $oauthexternalpage);
+
 }

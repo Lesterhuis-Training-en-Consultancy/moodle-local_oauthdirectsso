@@ -1,0 +1,61 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @package local_oauthdirectsso
+    @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
+    @copyright 08/01/2024 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
+    @author    Luuk Verhoeven
+    
+    @template local_oauthdirectsso/oauth_overview
+
+    Example context (json):
+    {
+        "addurl": "https://www.moodlesite.com/local/oauthdirectsso/view/oauth.php?action=add",
+        "table": "<table><tr><td>Row 1, Column 1</td><td>Row 1, Column 2</td></tr><tr><td>Row 2, Column 1</td><td>Row 2, Column 2</td></tr></table>"
+    }
+}}
+
+<a href="{{addurl}}" class="btn btn-primary mb-3">{{#str}} mustache:add_directsso, local_oauthdirectsso {{/str}}</a>
+
+{{{table}}}
+
+<script>
+    // Add the "delete" warning message.
+        {{#js}}
+        require(['core/notification'], function (Notification) {
+
+            document.addEventListener('click', function (event) {
+
+                if (!event.target.matches('.oauth-delete')) {
+                    return;
+                }
+
+                event.preventDefault();
+
+                let link = event.target.href;
+                Notification.confirm(
+                        '{{# str}} js:confirm_title, local_oauthdirectsso {{/ str}}',
+                        '{{# str}} js:confirm_delete, local_oauthdirectsso {{/ str}}',
+                        '{{# str}} btn:confirm, local_oauthdirectsso {{/ str}}',
+                        '{{# str}} btn:cancel, local_oauthdirectsso {{/ str}}',
+                        function () {
+                            window.location = link;
+                        });
+            });
+        });
+        {{/js}}
+</script>

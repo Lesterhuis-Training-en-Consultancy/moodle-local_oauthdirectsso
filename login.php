@@ -1,5 +1,5 @@
 <?php
-// This plugin is being used for Moodle Open Source LMS - http://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -19,42 +19,46 @@
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
- * @package   moodle-local_oauthdirectsso
+ * @package   local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  **/
+
+use local_oauthdirectsso\helper;
+use local_oauthdirectsso\oauth_config;
+
 require_once(__DIR__ . '/../../config.php');
 
 defined('MOODLE_INTERNAL') || die;
 
-$wantsurl = optional_param('wantsurl' , $CFG->wwwroot , PARAM_URL);
+$id = required_param('id', PARAM_INT);
+$wantsurl = optional_param('wantsurl', $CFG->wwwroot, PARAM_URL);
 $sesskey = sesskey();
 
-$PAGE->set_url('/local/oauthdirectsso/login.php' , [
-    'wantsurl' => $wantsurl
+$PAGE->set_url('/local/oauthdirectsso/login.php', [
+    'id' => $id,
+    'wantsurl' => $wantsurl,
 ]);
 $PAGE->set_context(context_system::instance());
 
-
-// Check IP.
-if (\local_oauthdirectsso\helper::has_valid_ipaddress() === false) {
-    /** @var local_oauthdirectsso_renderer $renderer **/
+if ($error = oauth_config::check_configuration_requirements($id)) {
     $renderer = $PAGE->get_renderer('local_oauthdirectsso');
 
     echo $OUTPUT->header();
-    echo $renderer->render_error_blocked();
+    echo $renderer->render_error($error);
     echo $OUTPUT->footer();
     exit;
 }
 
 if (isloggedin()) {
-    \local_oauthdirectsso\helper::redirect_loggedin($wantsurl);
+    helper::redirect_loggedin($wantsurl);
 }
 
-$url = \local_oauthdirectsso\helper::get_url();
-$url->param('sesskey' , $sesskey);
-if(!empty($wantsurl)){
-    $url->param('wantsurl' , $wantsurl);
+$url = oauth_config::get_oauth_url($id);
+$url->param('sesskey', $sesskey);
+
+if (!empty($wantsurl)) {
+    $url->param('wantsurl', $wantsurl);
 }
 
 redirect($url);
