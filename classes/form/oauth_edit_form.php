@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Oauth configuration edit form
+ * Oauth configuration edit form.
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
@@ -31,7 +31,7 @@ use local_oauthdirectsso\oauth_config;
 use moodleform;
 
 /**
- * Class oauth_edit_form
+ * Class oauth_edit_form.
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
