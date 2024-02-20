@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version information
+ * Version information.
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
@@ -26,6 +26,6 @@
 
 $plugin->release = '4.1.0';
 $plugin->maturity = MATURITY_BETA;
-$plugin->version = 2023041300;        // The current module version (Date: YYYYMMDDXX).
-$plugin->requires = 2015050500;    // Requires this Moodle version.
-$plugin->component = 'local_oauthdirectsso'; // Full name of the plugin (used for diagnostics).
+$plugin->version = 2023041300;
+$plugin->requires = 2015050500;
+$plugin->component = 'local_oauthdirectsso';

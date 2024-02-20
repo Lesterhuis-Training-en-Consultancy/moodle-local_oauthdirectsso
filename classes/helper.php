@@ -25,9 +25,8 @@
  **/
 
 namespace local_oauthdirectsso;
-use moodle_url;
 
-defined('MOODLE_INTERNAL') || die;
+use moodle_url;
 
 /**
  * Helper functions
@@ -43,17 +42,17 @@ class helper {
     /**
      * Not used??
      */
-    public static function store_wantsurl() : void {
+    public static function store_wantsurl(): void {
         global $SESSION, $CFG;
 
-        /// First, let's remember where the user was trying to get to before they got here
+        /// First, let's remember where the user was trying to get to before they got here.
         if (empty($SESSION->wantsurl)) {
             $SESSION->wantsurl = null;
             $referer = get_local_referer(false);
             if ($referer &&
-                $referer != $CFG->wwwroot &&
-                $referer != $CFG->wwwroot . '/' &&
-                $referer != $CFG->wwwroot . '/login/' &&
+                $referer !== $CFG->wwwroot &&
+                $referer !== $CFG->wwwroot . '/' &&
+                $referer !== $CFG->wwwroot . '/login/' &&
                 strpos($referer, $CFG->wwwroot . '/login/?') !== 0 &&
                 strpos($referer, $CFG->wwwroot . '/login/index.php') !== 0
             ) { // There might be some extra params such as ?lang=.
@@ -67,9 +66,9 @@ class helper {
      * @throws \dml_exception
      * @throws \moodle_exception
      */
-    public static function get_url() : moodle_url {
-        $url = get_config('local_oauthdirectsso' , 'url');
-        if(empty($url)){
+    public static function get_url(): moodle_url {
+        $url = get_config('local_oauthdirectsso', 'url');
+        if (empty($url)) {
             $url = '#';
         }
 
@@ -82,16 +81,16 @@ class helper {
      * @return bool
      * @throws \dml_exception
      */
-    public static function has_valid_ipaddress() : bool {
+    public static function has_valid_ipaddress(): bool {
         $ipaddresses = get_config('local_oauthdirectsso', 'restrict_ip_addresses');
 
         if (empty($ipaddresses)) {
             return true;
         }
-        $client_ip = getremoteaddr();
+        $clientip = getremoteaddr();
         $ipaddresses = explode(',', $ipaddresses);
         foreach ($ipaddresses as $ip) {
-            if (address_in_subnet($client_ip, trim($ip))) {
+            if (address_in_subnet($clientip, trim($ip))) {
                 return true;
             }
         }
@@ -106,10 +105,10 @@ class helper {
      *
      * @throws \moodle_exception
      */
-    public static function redirect_loggedin(string $wantsurl = '') : void {
+    public static function redirect_loggedin(string $wantsurl = ''): void {
         global $SESSION;
 
-        if(!empty($wantsurl)){
+        if (!empty($wantsurl)) {
             redirect($wantsurl);
         }
 

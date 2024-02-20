@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Renderer UI
+ * Renderer UI.
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
@@ -25,7 +25,7 @@
  **/
 
 /**
- * Class local_oauthdirectsso_renderer
+ * Class oauthdirectsso renderer.
  *
  * @package   moodle-local_oauthdirectsso
  * @copyright 14/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
@@ -36,7 +36,7 @@ class local_oauthdirectsso_renderer extends plugin_renderer_base {
     /**
      *
      * @return string
-     * @throws \moodle_exception
+     * @throws moodle_exception
      */
     public function render_error_blocked() : string {
         return $this->render_from_template('local_oauthdirectsso/blocked', ['ipaddress' => getremoteaddr()]);

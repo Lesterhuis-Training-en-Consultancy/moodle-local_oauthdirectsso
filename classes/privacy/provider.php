@@ -15,9 +15,9 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Implements the null provider
+ * Implements the null provider.
  *
- *@license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
+ * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   moodle-local_oauthdirectsso
  * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
@@ -25,7 +25,6 @@
  **/
 
 namespace local_oauthdirectsso\privacy;
-defined('MOODLE_INTERNAL') || die;
 
 /**
  * Privacy Subsystem for local_quizmonitor implementing null_provider.

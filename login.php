@@ -24,6 +24,7 @@
  * @author    Luuk Verhoeven
  **/
 require_once(__DIR__ . '/../../config.php');
+
 defined('MOODLE_INTERNAL') || die;
 
 $wantsurl = optional_param('wantsurl' , $CFG->wwwroot , PARAM_URL);
