@@ -28,6 +28,12 @@ Types of changes
 * **Fixed** for any bug fixes.
 * **Security** in case of vulnerabilities.
 
+#Version (4.2 v2) - 2024-04-02
+- Add support for legacy configuration.
+- Loads configuration in a 'Legacy configuration' link inside the oauth table overview.
+- Possible to update.
+- When the legacy configuration is emptied login.php will no longer be work without a provided id.
+
 # Version (4.2) - 2024-01-15
 - Add support for multiple OAuth providers. 
 - Please be aware this update is a breaking change for environments that already have this plugin installed. 

@@ -70,7 +70,7 @@ class helper {
      */
     public static function has_valid_ipaddress(int $oauthissuerid): bool {
 
-        $ipaddresses = oauth_config::get_ipaddresses($oauthissuerid);
+        $ipaddresses = self::get_ipaddresses($oauthissuerid);
 
         if (empty($ipaddresses)) {
             return true;
@@ -105,6 +105,24 @@ class helper {
         }
 
         redirect('/');
+    }
+
+    /**
+     * Get the configured ip addresses.
+     *
+     * @param int $oauthissuerid
+     *
+     * @return false|mixed|object|string
+     */
+    private static function get_ipaddresses(int $oauthissuerid) {
+        global $SESSION;
+
+        if ($SESSION->local_oauthdirectsso->legacy) {
+            return get_config('local_oauthdirectsso', 'restrict_ip_addresses');
+        }
+
+        return oauth_config::get_ipaddresses($oauthissuerid);
+
     }
 
 }

@@ -45,6 +45,31 @@ class oauth_config {
      */
     public const TABLE = 'local_oauthdirectsso_config';
 
+
+    /**
+     * Legacy supports only one OAuth provider.
+     * We get the id of that OAuth provider from the set url.
+     *
+     * @return int
+     */
+    public static function legacy_get_oauth_id(): int {
+
+        $url = get_config('local_oauthdirectsso', 'url');
+
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+            throw new moodle_exception('error:invalid_url', 'local_oauthdirectsso');
+        }
+
+        $query = parse_url($url, PHP_URL_QUERY);
+
+        if (preg_match('/^id=(\d+)$/', $query, $matches)) {
+            return (int) $matches[1];
+        }
+
+        throw new moodle_exception('error:invalid_url_parameter', 'local_oauthdirectsso');
+
+    }
+
     /**
      * Create OAuth config record.
      *
@@ -179,6 +204,15 @@ class oauth_config {
      * @return moodle_url
      */
     public static function get_oauth_url(int $oauthissuerid): moodle_url {
+        global $SESSION;
+
+        if ($SESSION->local_oauthdirectsso->legacy) {
+
+            // Correctness of url has already been evaluated by now.
+            $url = get_config('local_oauthdirectsso', 'url');
+
+            return new moodle_url($url);
+        }
 
         return new moodle_url(
             '/auth/oauth2/login.php',
@@ -196,6 +230,18 @@ class oauth_config {
      * @return string|null
      */
     public static function check_configuration_requirements(int $oauthissuerid): ?string {
+        global $SESSION;
+
+        // Legacy access only ipaddress check.
+        if ($SESSION->local_oauthdirectsso->legacy) {
+
+            if (!helper::has_valid_ipaddress($oauthissuerid)) {
+                return get_string('error:invalid_ip', 'local_oauthdirectsso') . ' [' . getremoteaddr() . ']';
+            }
+
+            return null;
+
+        }
 
         $oauthconfig = self::get_oauthconfig($oauthissuerid);
 
@@ -206,6 +252,7 @@ class oauth_config {
         if (!self::oauth_exists($oauthissuerid)) {
             // We can remove the config for the OAuth provider if it doesn't exist anymore.
             self::delete_oauthconfig($oauthissuerid);
+
             return get_string('error:oauth_doesnt_exist', 'local_oauthdirectsso');
         }
 

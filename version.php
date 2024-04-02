@@ -26,8 +26,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->release = '4.2.0';
+$plugin->release = '4.2.0 v2';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2024011500;               // The current module version (Date: YYYYMMDDXX).
+$plugin->version = 2024040200;               // The current module version (Date: YYYYMMDDXX).
 $plugin->requires = 2020061500;              // Requires this Moodle version.
 $plugin->component = 'local_oauthdirectsso'; // Full name of the plugin (used for diagnostics).

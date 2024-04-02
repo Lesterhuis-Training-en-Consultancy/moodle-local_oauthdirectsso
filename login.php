@@ -30,9 +30,17 @@ use local_oauthdirectsso\oauth_config;
 require_once(__DIR__ . '/../../config.php');
 defined('MOODLE_INTERNAL') || die;
 
-$id = required_param('id', PARAM_INT);
+$SESSION->local_oauthdirectsso = new stdClass();
+$SESSION->local_oauthdirectsso->legacy = false;
+
 $wantsurl = optional_param('wantsurl', $CFG->wwwroot, PARAM_URL);
 $sesskey = sesskey();
+
+$id = optional_param('id', 0, PARAM_INT);
+if ($id === 0) {
+    $SESSION->local_oauthdirectsso->legacy = true;
+    $id = oauth_config::legacy_get_oauth_id();
+}
 
 $PAGE->set_url('/local/oauthdirectsso/login.php', [
     'id' => $id,

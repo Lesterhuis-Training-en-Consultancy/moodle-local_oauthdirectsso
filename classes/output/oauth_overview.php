@@ -52,9 +52,11 @@ class oauth_overview implements renderable, templatable {
     public function export_for_template(renderer_base $output): array {
 
         $addurl = new \moodle_url('/local/oauthdirectsso/view/oauth.php', ['action' => 'add']);
+        $legacyurl = new \moodle_url('/local/oauthdirectsso/view/legacy.php');
 
         return [
             'addurl' => $addurl,
+            'legacyurl' => $legacyurl,
             'table' => $this->get_table(),
         ];
     }
