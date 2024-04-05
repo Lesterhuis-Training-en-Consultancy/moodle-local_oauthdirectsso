@@ -26,8 +26,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->release = '4.2.1';
+$plugin->release = '4.2.2';
 $plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2024011500;
+$plugin->version = 2024040500;
 $plugin->requires = 2020061500;
 $plugin->component = 'local_oauthdirectsso';

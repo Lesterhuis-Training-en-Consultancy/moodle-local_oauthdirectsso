@@ -27,7 +27,6 @@
 namespace local_oauthdirectsso\form;
 
 use html_writer;
-use local_oauthdirectsso\oauth_config;
 use moodleform;
 
 /**
