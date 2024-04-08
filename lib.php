@@ -15,34 +15,44 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Implements the null provider
+ * Lib functions
  *
  * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
  *
  * @package   local_oauthdirectsso
- * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
- * @author    Luuk Verhoeven
+ * @copyright 10/01/2024 LdesignMedia.nl - Luuk Verhoeven
+ * @author    Vincent Cornelis
  **/
 
-namespace local_oauthdirectsso\privacy;
+use core\output\inplace_editable;
+use local_oauthdirectsso\oauth_config;
 
 /**
- * Privacy Subsystem for local_quizmonitor implementing null_provider.
+ * Inplace editable callback
  *
- * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
+ * @param string $itemtype
+ * @param int $itemid
+ * @param mixed $newvalue
  *
- * @package   local_oauthdirectsso
- * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
- * @author    Luuk Verhoeven
+ * @return inplace_editable
  */
-class provider implements \core_privacy\local\metadata\null_provider {
+function local_oauthdirectsso_inplace_editable(string $itemtype, int $itemid, $newvalue): inplace_editable {
+    global $PAGE;
 
-    /**
-     * Get the language string identifier with the component's language file to explain why this plugin stores no data.
-     *
-     * @return  string
-     */
-    public static function get_reason() : string {
-        return 'privacy:metadata';
+    $PAGE->set_context(context_system::instance());
+
+    // Ip restrictions need to be stored.
+    if (strpos($itemtype, 'iprestrictions-oauthid-') === 0) {
+        oauth_config::update_value($itemid, 'iprestrictions', $newvalue);
     }
+
+    return new inplace_editable(
+        'local_oauthdirectsso',
+        $itemtype,
+        $itemid,
+        true,
+        $newvalue,
+        $newvalue,
+    );
+
 }
