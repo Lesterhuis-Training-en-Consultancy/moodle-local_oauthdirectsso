@@ -4,7 +4,7 @@ In brief, the Ldesign `local_oauthdirectsso` redirects not logged users to a spe
  
 Special thanks to Gemma Lesterhuis ([Lesterhuis Training & Consultancy](https://ltnc.nl/)) for develop & design, useful input, bug reports and beta testing
 
-![Ldesignmedia.nl](https://ldesignmedia.nl/logo_small.png)
+![MFreak.nl](https://ldesignmedia.nl/logo_small.png)
 ![Lesterhuis Training & Consultancy](https://ldesignmedia.nl/logo_small_ltnc.png)
 
 * Author: Luuk Verhoeven, [ldesignmedia.nl](https://ldesignmedia.nl/)
