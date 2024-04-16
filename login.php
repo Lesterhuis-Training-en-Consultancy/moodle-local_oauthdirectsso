@@ -28,6 +28,7 @@ use local_oauthdirectsso\helper;
 use local_oauthdirectsso\oauth_config;
 
 require_once(__DIR__ . '/../../config.php');
+
 defined('MOODLE_INTERNAL') || die;
 
 $SESSION->local_oauthdirectsso = new stdClass();

@@ -50,9 +50,9 @@ class helper {
             $SESSION->wantsurl = null;
             $referer = get_local_referer(false);
             if ($referer &&
-                $referer != $CFG->wwwroot &&
-                $referer != $CFG->wwwroot . '/' &&
-                $referer != $CFG->wwwroot . '/login/' &&
+                $referer !== $CFG->wwwroot &&
+                $referer !== $CFG->wwwroot . '/' &&
+                $referer !== $CFG->wwwroot . '/login/' &&
                 strpos($referer, $CFG->wwwroot . '/login/?') !== 0 &&
                 strpos($referer, $CFG->wwwroot . '/login/index.php') !== 0
             ) { // There might be some extra params such as ?lang=.

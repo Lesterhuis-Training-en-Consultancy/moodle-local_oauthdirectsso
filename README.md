@@ -8,7 +8,6 @@ Special thanks to Gemma Lesterhuis ([Lesterhuis Training & Consultancy](https://
 ![Lesterhuis Training & Consultancy](https://ldesignmedia.nl/logo_small_ltnc.png)
 
 * Author: Luuk Verhoeven, [ldesignmedia.nl](https://ldesignmedia.nl/)
-
 * Author: Gemma Lesterhuis, [Lesterhuis Training & Consultancy](https://ltnc.nl/)
 * Min. required: Moodle 3.9.x
 * Supports PHP: 7.4 trough 8.2
