@@ -34,6 +34,9 @@ Types of changes
 - Possible to update.
 - When the legacy configuration is emptied login.php will no longer be work without a provided id.
 
+# Version (4.5.0) - 2024-09-13
+- Tested Moodle 4.5
+
 # Version (4.2) - 2024-01-15
 - Add support for multiple OAuth providers. 
 - Please be aware this update is a breaking change for environments that already have this plugin installed. 
