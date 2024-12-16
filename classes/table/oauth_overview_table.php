@@ -129,7 +129,7 @@ class oauth_overview_table extends table_sql {
             '/local/oauthdirectsso/view/oauth.php',
             [
                 'action' => 'delete',
-                'id' => $row->id
+                'id' => $row->id,
             ]
         );
 

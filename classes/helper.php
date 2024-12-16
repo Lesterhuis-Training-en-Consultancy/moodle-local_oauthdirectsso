@@ -26,8 +26,6 @@
 
 namespace local_oauthdirectsso;
 
-use moodle_url;
-
 /**
  * Helper functions
  *

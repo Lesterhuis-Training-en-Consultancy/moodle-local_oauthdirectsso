@@ -85,7 +85,7 @@ class oauth_overview implements renderable, templatable {
             'actions',
         ];
 
-        $table->define_headers(array_map(static function($val) {
+        $table->define_headers(array_map(static function ($val) {
             return get_string('heading:table_' . $val, 'local_oauthdirectsso');
         }, $columns));
 

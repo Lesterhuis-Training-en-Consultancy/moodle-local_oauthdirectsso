@@ -45,7 +45,6 @@ class oauth_config {
      */
     public const TABLE = 'local_oauthdirectsso_config';
 
-
     /**
      * Legacy supports only one OAuth provider.
      * We get the id of that OAuth provider from the set url.

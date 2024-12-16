@@ -37,9 +37,9 @@
 <script>
     // Add the "delete" warning message.
         {{#js}}
-        require(['core/notification'], function (Notification) {
+        require(['core/notification'], function(Notification) {
 
-            document.addEventListener('click', function (event) {
+            document.addEventListener('click', function(event) {
 
                 if (!event.target.matches('.oauth-delete')) {
                     return;
@@ -53,7 +53,7 @@
                         '{{# str}} js:confirm_delete, local_oauthdirectsso {{/ str}}',
                         '{{# str}} btn:confirm, local_oauthdirectsso {{/ str}}',
                         '{{# str}} btn:cancel, local_oauthdirectsso {{/ str}}',
-                        function () {
+                        function() {
                             window.location = link;
                         });
             });
