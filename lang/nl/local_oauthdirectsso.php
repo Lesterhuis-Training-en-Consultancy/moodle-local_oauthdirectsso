@@ -49,12 +49,27 @@ $string['form:select_oauth'] = 'Selecteer OAuth 2 service';
 $string['form:restrict_ip_addresses'] = 'Beperkte IP-adressen';
 $string['form:restrict_ip_addresses_desc'] = 'CSV format komma gescheidde IP adressen';
 $string['form:no_oauths'] = 'Er zijn geen OAuth services meer om te selecteren';
+$string['form:has_profilefield_validation'] = 'Enable profile field validation';
+$string['form:has_profilefield_validation_desc'] = ' ';
+$string['form:make_a_selection'] = 'Make a selection';
+$string['form:profilefield'] = 'Profile field';
+$string['form:profilefield_value'] = 'Profile field value';
+$string['form:profilefield_datetime_start'] = 'Start date';
+$string['form:profilefield_datetime_end'] = 'End date';
+
+// User profile fields.
+$string['profilefield:city'] = 'user: - City';
+$string['profilefield:department'] = 'user: - Department';
+$string['profilefield:institution'] = 'user: - Institution';
 
 // Tables.
 $string['heading:table_name'] = 'OAuth naam';
 $string['heading:table_redirecturl'] = 'Redirect url';
 $string['heading:table_iprestrictions'] = 'Beperkte IP adressen';
 $string['heading:table_actions'] = 'Acties';
+$string['heading:table_profilefield'] = 'Profile field';
+$string['heading:table_profilefield_datetime_start'] = 'Start date';
+$string['heading:table_profilefield_datetime_end'] = 'End date';
 
 // Mustache.
 $string['mustache:legacy_url'] = 'Legacy configuratie';
