@@ -169,4 +169,26 @@ class oauth_edit_form extends moodleform {
 
     }
 
+    /**
+     * Add validation
+     *
+     * @param $data
+     * @param $files
+     * @return array
+     */
+    public function validation($data, $files): array {
+        $errors = parent::validation($data, $files);
+
+        if ($data['has_profilefield_validation'] == 1) {
+            if (empty($data['profilefield'])) {
+                $errors['profilefield'] = get_string('required');
+            }
+
+            if (empty($data['profilefield_value'])) {
+                $errors['profilefield_value'] = get_string('required');
+            }
+        }
+
+        return $errors;
+    }
 }
