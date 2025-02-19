@@ -42,7 +42,11 @@ admin_externalpage_setup('local_oauthdirectsso_oauthview');
 $context = context_system::instance();
 $PAGE->set_context($context);
 
-$url = new moodle_url('/local/oauthdirectsso/view/oauth.php', ['action' => $action]);
+$url = new moodle_url('/local/oauthdirectsso/view/oauth.php', [
+    'action' => $action,
+    'id' => $id,
+]);
+
 $PAGE->set_url($url);
 
 $PAGE->set_title(get_string('view:oauth', 'local_oauthdirectsso'));
@@ -50,7 +54,13 @@ $PAGE->set_heading(get_string('view:oauth', 'local_oauthdirectsso'));
 
 switch ($action) {
     case 'add':
+    case 'edit':
         $form = new oauth_edit_form($PAGE->url);
+
+        if ($id) {
+            $oauthconfig = oauth_config::get_oauthconfig($id);
+            $form->set_data($oauthconfig);
+        }
 
         if ($form->is_cancelled()) {
             $url->remove_all_params();
@@ -58,7 +68,23 @@ switch ($action) {
         }
 
         if ($data = $form->get_data()) {
+
+            if ($id) {
+                $data->id = $id;
+            }
+
+            // (
+            //     [iprestrictions] => 127.0.0.1
+            //     [has_profilefield_validation] => 1
+            //     [profilefield] => 4
+            //     [profilefield_value] => aaa
+            //     [profilefield_datetime_start] => 1739998680
+            //     [profilefield_datetime_end] => 1739998680
+            //     [submitbutton] => Save changes
+            //     [id] => 5
+
             oauth_config::create_oauthconfig($data);
+
             $url->remove_all_params();
             redirect($url);
         }

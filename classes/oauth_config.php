@@ -79,6 +79,19 @@ class oauth_config {
     public static function create_oauthconfig(object $data): void {
         global $DB;
 
+        // This is an update.
+        if(!empty($data->id)){
+            $data->id = $DB->get_field(self::TABLE, 'id',['oauthissuerid' => $data->id]);
+
+            if(empty($data->id)){
+                throw new moodle_exception('error:no_config_found', 'local_oauthdirectsso');
+            }
+
+            $data->timemodified = time();
+            $DB->update_record(self::TABLE, $data);
+            return;
+        }
+
         // Nothing to create if no issuer id has been provided.
         if (!isset($data->oauthissuerid)) {
             return;
@@ -111,7 +124,7 @@ class oauth_config {
      *
      * @return false|mixed|\stdClass
      */
-    private static function get_oauthconfig(int $oauthissuerid) {
+    public static function get_oauthconfig(int $oauthissuerid) {
         global $DB;
 
         return $DB->get_record(self::TABLE, ['oauthissuerid' => $oauthissuerid]);

@@ -66,7 +66,7 @@ class oauth_overview implements renderable, templatable {
      *
      * @return false|string
      */
-    private function get_table() {
+    private function get_table(): bool|string {
         global $PAGE;
 
         ob_start();
@@ -81,6 +81,9 @@ class oauth_overview implements renderable, templatable {
         $columns = [
             'name',
             'redirecturl',
+            'profilefield',
+            'profilefield_datetime_start',
+            'profilefield_datetime_end',
             'iprestrictions',
             'actions',
         ];

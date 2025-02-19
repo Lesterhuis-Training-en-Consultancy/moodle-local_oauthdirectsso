@@ -123,4 +123,20 @@ class helper {
 
     }
 
+    /**
+     * Get profile fields
+     *
+     * @return array
+     */
+    public static function get_profile_fields_choices(): array {
+        global $DB;
+        $choices = [
+            '' => get_string('form:make_a_selection', 'local_oauthdirectsso'),
+            'city' => get_string('profilefield:city', 'local_oauthdirectsso'),
+            'institution' => get_string('profilefield:institution', 'local_oauthdirectsso'),
+            'department' => get_string('profilefield:department', 'local_oauthdirectsso'),
+        ];
+
+        return $choices + $DB->get_records_menu('user_info_field', [], 'name', 'id, concat("profilefield: ", " - " , name)');
+    }
 }

@@ -63,6 +63,60 @@ function xmldb_local_oauthdirectsso_upgrade(int $oldversion): bool {
         upgrade_plugin_savepoint(true, 2024010900, 'local', 'oauthdirectsso');
     }
 
+    if ($oldversion < 2025021900) {
+
+        // Define field has_profilefield_validation to be added to local_oauthdirectsso_config.
+        $table = new xmldb_table('local_oauthdirectsso_config');
+        $field = new xmldb_field(
+            'has_profilefield_validation', XMLDB_TYPE_INTEGER, '1',
+            null, XMLDB_NOTNULL, null, '0', 'timemodified'
+        );
+
+        // Conditionally launch add field has_profilefield_validation.
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        $field = new xmldb_field(
+            'profilefield', XMLDB_TYPE_CHAR, '50', null,
+            XMLDB_NOTNULL, null, null, 'has_profilefield_validation'
+        );
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        $field = new xmldb_field(
+            'profilefield_value', XMLDB_TYPE_CHAR, '200', null,
+            XMLDB_NOTNULL, null, null, 'profilefield'
+        );
+
+        // Conditionally launch add field profilefield_value.
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        $field = new xmldb_field(
+            'profilefield_datetime_start', XMLDB_TYPE_INTEGER, '11',
+            null, XMLDB_NOTNULL, null, '0', 'profilefield_value'
+        );
+
+        // Conditionally launch add field profilefield_datetime_start.
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+
+        $field = new xmldb_field('profilefield_datetime_end', XMLDB_TYPE_INTEGER, '11', null, XMLDB_NOTNULL, null, '0', 'profilefield_datetime_start');
+
+        // Conditionally launch add field profilefield_datetime_end.
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        // Oauthdirectsso savepoint reached.
+        upgrade_plugin_savepoint(true, 2025021900, 'local', 'oauthdirectsso');
+    }
+
     return true;
 
 }

@@ -27,6 +27,7 @@
 namespace local_oauthdirectsso\form;
 
 use html_writer;
+use local_oauthdirectsso\helper;
 use moodleform;
 
 /**
@@ -53,26 +54,7 @@ class oauth_edit_form extends moodleform {
 
         if ($oauths) {
 
-            $mform->addElement(
-                'select',
-                'oauthissuerid',
-                get_string('form:select_oauth', 'local_oauthdirectsso'),
-                $oauths
-            );
-
-            $mform->addElement(
-                'text',
-                'iprestrictions',
-                get_string('form:restrict_ip_addresses', 'local_oauthdirectsso'),
-            );
-            $mform->setType('iprestrictions', PARAM_RAW);
-
-            $mform->addElement(
-                'static',
-                'iprestrictions_desc',
-                '',
-                get_string('form:restrict_ip_addresses_desc', 'local_oauthdirectsso'),
-            );
+            $this->edit_element($mform, $oauths);
 
         } else {
 
@@ -105,6 +87,86 @@ class oauth_edit_form extends moodleform {
         }
 
         return $oauths;
+    }
+
+    /**
+     * Add the elements to the form.
+     *
+     * @param \MoodleQuickForm $mform
+     * @param array $oauths
+     * @return void
+     */
+    private function edit_element(\MoodleQuickForm $mform, array $oauths): void {
+        $id = optional_param('id', null, PARAM_INT);
+
+        if (empty($id)) {
+            $mform->addElement(
+                'select',
+                'oauthissuerid',
+                get_string('form:select_oauth', 'local_oauthdirectsso'),
+                $oauths
+            );
+        }
+
+        $mform->addElement(
+            'text',
+            'iprestrictions',
+            get_string('form:restrict_ip_addresses', 'local_oauthdirectsso'),
+        );
+        $mform->setType('iprestrictions', PARAM_RAW);
+
+        // Optional profile field validation.
+        $mform->addElement(
+            'static',
+            'iprestrictions_desc',
+            '',
+            get_string('form:restrict_ip_addresses_desc', 'local_oauthdirectsso'),
+        );
+
+        $mform->addElement(
+            'advcheckbox',
+            'has_profilefield_validation',
+            get_string('form:has_profilefield_validation', 'local_oauthdirectsso'),
+            get_string('form:has_profilefield_validation_desc', 'local_oauthdirectsso'),
+            null,
+            [0, 1]
+        );
+
+        $profilefields = helper::get_profile_fields_choices();
+        $mform->addElement(
+            'select',
+            'profilefield',
+            get_string('form:profilefield', 'local_oauthdirectsso'),
+            $profilefields
+        );
+
+        $mform->addElement(
+            'text',
+            'profilefield_value',
+            get_string('form:profilefield_value', 'local_oauthdirectsso')
+        );
+        $mform->setType('profilefield_value', PARAM_TEXT);
+
+        // Date time picker with disable checkbox.
+        $mform->addElement(
+            'date_time_selector',
+            'profilefield_datetime_start',
+            get_string('form:profilefield_datetime_start', 'local_oauthdirectsso'),
+            ['optional' => true]
+        );
+
+        $mform->addElement(
+            'date_time_selector',
+            'profilefield_datetime_end',
+            get_string('form:profilefield_datetime_end', 'local_oauthdirectsso'),
+            ['optional' => true]
+        );
+
+        $mform->disabledIf('profilefield', 'has_profilefield_validation', 'eq', 0);
+        $mform->disabledIf('profilefield_value', 'has_profilefield_validation', 'eq', 0);
+        $mform->disabledIf('profilefield_datetime_start', 'has_profilefield_validation', 'eq', 0);
+        $mform->disabledIf('profilefield_datetime_end', 'has_profilefield_validation', 'eq', 0);
+
     }
 
 }
