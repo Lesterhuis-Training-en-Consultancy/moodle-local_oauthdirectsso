@@ -54,5 +54,20 @@ function local_oauthdirectsso_inplace_editable(string $itemtype, int $itemid, $n
         $newvalue,
         $newvalue,
     );
+}
 
+/**
+ * Execute before http headers.
+ *
+ * @return void
+ */
+function local_oauthdirectsso_before_http_headers(): void {
+
+    // If class exists, no more need to run from here, as hook has been implemented.
+    // This shouldn't execute anyway in Moodle 4.4 forward, but just in case.
+    if (class_exists(\core\hook\output\before_http_headers::class)) {
+        return;
+    }
+
+    \local_oauthdirectsso\hooks\before_http_headers::callback();
 }

@@ -15,20 +15,21 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version information.
+ * Hook callbacks
  *
- * @license   Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
- * @package   local_oauthdirectsso
- * @copyright 02/07/2020 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
+ * @package   moodle-local_oauthdirectsso
+ * @copyright 20/02/2025 Mfreak.nl | LdesignMedia.nl - Luuk Verhoeven
  * @author    Luuk Verhoeven
  **/
-
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->release = '4.5.0';
-$plugin->maturity = MATURITY_STABLE;
-$plugin->version = 2025022000;
-$plugin->requires = 2020061500;
-$plugin->supported = [39, 405];
-$plugin->component = 'local_oauthdirectsso';
+// Only add Moodle 4.4 forward.
+if (class_exists(\core\hook\output\before_http_headers::class)) {
+
+    $callbacks[] = [
+        'hook' => \core\hook\output\before_http_headers::class,
+        'callback' => [\local_oauthdirectsso\hooks\before_http_headers::class, 'callback'],
+    ];
+}

@@ -226,6 +226,8 @@ class oauth_config {
             return new moodle_url($url);
         }
 
+        setcookie('local_oauthdirectsso_oauthissuerid', $oauthissuerid, time() + 3600, '/');
+
         return new moodle_url(
             '/auth/oauth2/login.php',
             [

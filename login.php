@@ -33,6 +33,7 @@ defined('MOODLE_INTERNAL') || die;
 
 $SESSION->local_oauthdirectsso = new stdClass();
 $SESSION->local_oauthdirectsso->legacy = false;
+$SESSION->local_oauthdirectsso->oauthissuerid = 0;
 
 $wantsurl = optional_param('wantsurl', $CFG->wwwroot, PARAM_URL);
 $sesskey = sesskey();
