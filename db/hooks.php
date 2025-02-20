@@ -31,5 +31,6 @@ if (class_exists(\core\hook\output\before_http_headers::class)) {
     $callbacks[] = [
         'hook' => \core\hook\output\before_http_headers::class,
         'callback' => [\local_oauthdirectsso\hooks\before_http_headers::class, 'callback'],
+        'priority' => 1000,
     ];
 }
