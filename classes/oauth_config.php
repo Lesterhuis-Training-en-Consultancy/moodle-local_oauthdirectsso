@@ -277,8 +277,19 @@ class oauth_config {
 
         // Check if the link is expired.
         if (!helper::within_datetime_range($oauthconfig->profilefield_datetime_start, $oauthconfig->profilefield_datetime_end)) {
+
+            if(!empty($oauthconfig->expired_link_profilefield_datetime_start)
+                && $oauthconfig->expired_link_profilefield_datetime_start < time()) {
+
+                return get_string(
+                    'error:expired_link_profilefield_datetime_start',
+                    'local_oauthdirectsso',
+                    date('Y-m-d H:i', $oauthconfig->expired_link_profilefield_datetime_start)
+                );
+            }
+
             return get_string(
-                'error:link_expired',
+                'error:expired_link_profilefield_datetime_end',
                 'local_oauthdirectsso',
                 date('Y-m-d H:i', $oauthconfig->profilefield_datetime_end)
             );

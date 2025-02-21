@@ -94,4 +94,7 @@ $string['error:config_disabled'] = 'OAuth configuratie is uitgeschakeld';
 $string['error:oauth_doesnt_exist'] = 'OAuth provider bestaat niet';
 $string['error:invalid_url'] = 'Ongeldige OAuth url';
 $string['error:invalid_url_parameter'] = 'OAuth url heeft een ongeldige parameter';
-$string['error:link_expired'] = 'This link is no longer active since {$a}. Please contact us for more information.';
+$string['error:expired_link_profilefield_datetime_start'] = 'This link is not yet active. It will be available starting on {$a}.
+Please contact us for more details.';
+$string['error:expired_link_profilefield_datetime_end'] = 'This link has expired and has been inactive since {$a}.
+Please contact us for further assistance.';
