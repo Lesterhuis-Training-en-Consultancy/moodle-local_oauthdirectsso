@@ -143,14 +143,14 @@ class helper {
     /**
      * Check if a datetime is within a given range.
      *
-     * @param $start
-     * @param $end
+     * @param int $start
+     * @param int $end
      * @return bool
      */
     public static function within_datetime_range(int $start, int $end): bool {
         $timestamp = time();
 
-        // Check if the current time is within the range
+        // Check if the current time is within the range.
         if (($start == 0 || $timestamp >= $start) && ($end == 0 || $timestamp <= $end)) {
             return true;
         }

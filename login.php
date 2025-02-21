@@ -27,6 +27,7 @@
 use local_oauthdirectsso\helper;
 use local_oauthdirectsso\oauth_config;
 
+// phpcs:disable moodle.Files.RequireLogin.Missing
 require_once(__DIR__ . '/../../config.php');
 
 defined('MOODLE_INTERNAL') || die;

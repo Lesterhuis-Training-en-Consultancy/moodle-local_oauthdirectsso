@@ -26,6 +26,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+// phpcs:disable moodle.Files.LangFilesOrdering.UnexpectedComment
+// phpcs:disable moodle.Files.LangFilesOrdering.IncorrectOrder
+
 // Default.
 $string['pluginname'] = 'Oauth 2 direct SSO';
 $string['privacy:metadata'] = 'This plugin doesn\'t save any user information';
@@ -90,3 +93,4 @@ $string['error:config_disabled'] = 'OAuth configuration has been disabled';
 $string['error:oauth_doesnt_exist'] = 'OAuth provider does not exist';
 $string['error:invalid_url'] = 'Invalid OAuth url provided';
 $string['error:invalid_url_parameter'] = 'OAuth url has invalid parameter';
+$string['error:link_expired'] = 'This link is no longer active since {$a}. Please contact us for more information.';

@@ -73,16 +73,6 @@ switch ($action) {
                 $data->id = $id;
             }
 
-            // (
-            //     [iprestrictions] => 127.0.0.1
-            //     [has_profilefield_validation] => 1
-            //     [profilefield] => 4
-            //     [profilefield_value] => aaa
-            //     [profilefield_datetime_start] => 1739998680
-            //     [profilefield_datetime_end] => 1739998680
-            //     [submitbutton] => Save changes
-            //     [id] => 5
-
             oauth_config::create_oauthconfig($data);
 
             $url->remove_all_params();

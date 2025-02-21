@@ -80,15 +80,16 @@ class oauth_config {
         global $DB;
 
         // This is an update.
-        if(!empty($data->id)){
-            $data->id = $DB->get_field(self::TABLE, 'id',['oauthissuerid' => $data->id]);
+        if (!empty($data->id)) {
+            $data->id = $DB->get_field(self::TABLE, 'id', ['oauthissuerid' => $data->id]);
 
-            if(empty($data->id)){
+            if (empty($data->id)) {
                 throw new moodle_exception('error:no_config_found', 'local_oauthdirectsso');
             }
 
             $data->timemodified = time();
             $DB->update_record(self::TABLE, $data);
+
             return;
         }
 
@@ -272,6 +273,15 @@ class oauth_config {
 
         if ($oauthconfig->disabled) {
             return get_string('error:config_disabled', 'local_oauthdirectsso');
+        }
+
+        // Check if the link is expired.
+        if (!helper::within_datetime_range($oauthconfig->profilefield_datetime_start, $oauthconfig->profilefield_datetime_end)) {
+            return get_string(
+                'error:link_expired',
+                'local_oauthdirectsso',
+                date('Y-m-d H:i', $oauthconfig->profilefield_datetime_end)
+            );
         }
 
         if (!helper::has_valid_ipaddress($oauthissuerid)) {

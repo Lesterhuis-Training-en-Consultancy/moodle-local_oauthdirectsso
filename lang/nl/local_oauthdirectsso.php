@@ -26,6 +26,9 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+// phpcs:disable moodle.Files.LangFilesOrdering.UnexpectedComment
+// phpcs:disable moodle.Files.LangFilesOrdering.IncorrectOrder
+
 // Default.
 $string['pluginname'] = 'Oauth2 direct SSO';
 $string['privacy:metadata'] = 'Deze plugin bewaard geen gebruikersinformatie.';
@@ -91,3 +94,4 @@ $string['error:config_disabled'] = 'OAuth configuratie is uitgeschakeld';
 $string['error:oauth_doesnt_exist'] = 'OAuth provider bestaat niet';
 $string['error:invalid_url'] = 'Ongeldige OAuth url';
 $string['error:invalid_url_parameter'] = 'OAuth url heeft een ongeldige parameter';
+$string['error:link_expired'] = 'This link is no longer active since {$a}. Please contact us for more information.';

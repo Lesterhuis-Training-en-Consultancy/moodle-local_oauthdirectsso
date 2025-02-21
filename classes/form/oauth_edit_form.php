@@ -123,6 +123,21 @@ class oauth_edit_form extends moodleform {
             get_string('form:restrict_ip_addresses_desc', 'local_oauthdirectsso'),
         );
 
+        // Date time picker with disable checkbox.
+        $mform->addElement(
+            'date_time_selector',
+            'profilefield_datetime_start',
+            get_string('form:profilefield_datetime_start', 'local_oauthdirectsso'),
+            ['optional' => true]
+        );
+
+        $mform->addElement(
+            'date_time_selector',
+            'profilefield_datetime_end',
+            get_string('form:profilefield_datetime_end', 'local_oauthdirectsso'),
+            ['optional' => true]
+        );
+
         $mform->addElement(
             'advcheckbox',
             'has_profilefield_validation',
@@ -147,25 +162,8 @@ class oauth_edit_form extends moodleform {
         );
         $mform->setType('profilefield_value', PARAM_TEXT);
 
-        // Date time picker with disable checkbox.
-        $mform->addElement(
-            'date_time_selector',
-            'profilefield_datetime_start',
-            get_string('form:profilefield_datetime_start', 'local_oauthdirectsso'),
-            ['optional' => true]
-        );
-
-        $mform->addElement(
-            'date_time_selector',
-            'profilefield_datetime_end',
-            get_string('form:profilefield_datetime_end', 'local_oauthdirectsso'),
-            ['optional' => true]
-        );
-
         $mform->disabledIf('profilefield', 'has_profilefield_validation', 'eq', 0);
         $mform->disabledIf('profilefield_value', 'has_profilefield_validation', 'eq', 0);
-        $mform->disabledIf('profilefield_datetime_start', 'has_profilefield_validation', 'eq', 0);
-        $mform->disabledIf('profilefield_datetime_end', 'has_profilefield_validation', 'eq', 0);
 
     }
 

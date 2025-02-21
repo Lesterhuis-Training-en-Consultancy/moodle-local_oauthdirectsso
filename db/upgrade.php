@@ -105,8 +105,16 @@ function xmldb_local_oauthdirectsso_upgrade(int $oldversion): bool {
             $dbman->add_field($table, $field);
         }
 
-
-        $field = new xmldb_field('profilefield_datetime_end', XMLDB_TYPE_INTEGER, '11', null, XMLDB_NOTNULL, null, '0', 'profilefield_datetime_start');
+        $field = new xmldb_field(
+            'profilefield_datetime_end',
+            XMLDB_TYPE_INTEGER,
+            '11',
+            null,
+            XMLDB_NOTNULL,
+            null,
+            '0',
+            'profilefield_datetime_start'
+        );
 
         // Conditionally launch add field profilefield_datetime_end.
         if (!$dbman->field_exists($table, $field)) {
