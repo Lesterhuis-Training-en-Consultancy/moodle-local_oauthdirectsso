@@ -52,27 +52,27 @@ $string['form:select_oauth'] = 'Selecteer OAuth 2 service';
 $string['form:restrict_ip_addresses'] = 'Beperkte IP-adressen';
 $string['form:restrict_ip_addresses_desc'] = 'CSV format komma gescheidde IP adressen';
 $string['form:no_oauths'] = 'Er zijn geen OAuth services meer om te selecteren';
-$string['form:has_profilefield_validation'] = 'Enable profile field validation';
-$string['form:has_profilefield_validation_desc'] = ' ';
-$string['form:make_a_selection'] = 'Make a selection';
-$string['form:profilefield'] = 'Profile field';
-$string['form:profilefield_value'] = 'Profile field value';
-$string['form:profilefield_datetime_start'] = 'Start date';
-$string['form:profilefield_datetime_end'] = 'End date';
+$string['form:has_profilefield_validation'] = 'Inschakelen Profielfield validatie';
+$string['form:has_profilefield_validation_desc'] = 'Wanneer de validatie is ingeschakeld, wordt er gecontroleerd of het gekozen veld een waarde bevat nadat het account is aangemaakt via OAuth2. Als dit niet het geval is, zal de validatie dit tegenhouden. ';
+$string['form:make_a_selection'] = 'Maak een selectie';
+$string['form:profilefield'] = 'Profielveld';
+$string['form:profilefield_value'] = 'Profielveld waarde';
+$string['form:profilefield_datetime_start'] = 'Startdatum';
+$string['form:profilefield_datetime_end'] = 'Einddatum';
 
 // User profile fields.
-$string['profilefield:city'] = 'user: - City';
-$string['profilefield:department'] = 'user: - Department';
-$string['profilefield:institution'] = 'user: - Institution';
+$string['profilefield:city'] = 'user: - Plaats';
+$string['profilefield:department'] = 'user: - Afdeling';
+$string['profilefield:institution'] = 'user: - Organisatie';
 
 // Tables.
 $string['heading:table_name'] = 'OAuth naam';
 $string['heading:table_redirecturl'] = 'Redirect url';
 $string['heading:table_iprestrictions'] = 'Beperkte IP adressen';
 $string['heading:table_actions'] = 'Acties';
-$string['heading:table_profilefield'] = 'Profile field';
-$string['heading:table_profilefield_datetime_start'] = 'Start date';
-$string['heading:table_profilefield_datetime_end'] = 'End date';
+$string['heading:table_profilefield'] = 'Profielveld';
+$string['heading:table_profilefield_datetime_start'] = 'Startdatum';
+$string['heading:table_profilefield_datetime_end'] = 'Einddatum';
 
 // Mustache.
 $string['mustache:legacy_url'] = 'Legacy configuratie';
@@ -94,7 +94,7 @@ $string['error:config_disabled'] = 'OAuth configuratie is uitgeschakeld';
 $string['error:oauth_doesnt_exist'] = 'OAuth provider bestaat niet';
 $string['error:invalid_url'] = 'Ongeldige OAuth url';
 $string['error:invalid_url_parameter'] = 'OAuth url heeft een ongeldige parameter';
-$string['error:expired_link_profilefield_datetime_start'] = 'This link is not yet active. It will be available starting on {$a}.
-Please contact us for more details.';
-$string['error:expired_link_profilefield_datetime_end'] = 'This link has expired and has been inactive since {$a}.
-Please contact us for further assistance.';
+$string['error:expired_link_profilefield_datetime_start'] = 'Deze link is nog niet actief. Hij zal beschikbaar zijn vanaf {$a}.
+Neem contact met ons op voor meer informatie..';
+$string['error:expired_link_profilefield_datetime_end'] = 'Deze link is verlopen en is sinds {$a} niet meer actief.
+Neem contact met ons op voor verdere assistentie.';
