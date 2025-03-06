@@ -103,7 +103,7 @@ class oauth_overview_table extends table_sql {
             ]);
         }
 
-        return s($row->profilefield);
+        return s($row->profilefield) . ' : ' . s($row->profilefield_value);
     }
 
     /**

@@ -26,7 +26,6 @@
 
 use local_oauthdirectsso\form\oauth_edit_form;
 use local_oauthdirectsso\oauth_config;
-use local_oauthdirectsso\output\oauth_edit;
 use local_oauthdirectsso\output\oauth_overview;
 
 require_once(__DIR__ . '/../../../config.php');
