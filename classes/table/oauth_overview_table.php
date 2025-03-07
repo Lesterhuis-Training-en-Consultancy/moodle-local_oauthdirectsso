@@ -114,7 +114,7 @@ class oauth_overview_table extends table_sql {
      * @return string
      */
     public function col_profilefield_datetime_start(object $row): string {
-        return $row->profilefield_datetime_start ? date('Y-m-d H:i', $row->profilefield_datetime_start) : '';
+        return $row->profilefield_datetime_start ? date('d-m-Y H:i', $row->profilefield_datetime_start) : '';
     }
 
     /**
@@ -125,7 +125,7 @@ class oauth_overview_table extends table_sql {
      * @return string
      */
     public function col_profilefield_datetime_end(object $row): string {
-        return $row->profilefield_datetime_end ? date('Y-m-d H:i', $row->profilefield_datetime_end) : '';
+        return $row->profilefield_datetime_end ? date('d-m-Y H:i', $row->profilefield_datetime_end) : '';
     }
 
     /**
