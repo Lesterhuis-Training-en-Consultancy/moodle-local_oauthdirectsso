@@ -50,9 +50,10 @@ class oauth_edit_form extends moodleform {
 
         $mform = $this->_form;
 
+        $id = optional_param('id', 0, PARAM_INT);
         $oauths = $this->get_oauths();
 
-        if ($oauths) {
+        if ($oauths || $id > 0) {
 
             $this->edit_element($mform, $oauths);
 
