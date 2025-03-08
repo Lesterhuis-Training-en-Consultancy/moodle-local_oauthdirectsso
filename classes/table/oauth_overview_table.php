@@ -100,7 +100,7 @@ class oauth_overview_table extends table_sql {
         if (is_numeric($row->profilefield)) {
             return $DB->get_field('user_info_field', 'name', [
                 'id' => $row->profilefield,
-            ]);
+            ]) . ' : ' . s($row->profilefield_value);
         }
 
         return s($row->profilefield) . ' : ' . s($row->profilefield_value);
