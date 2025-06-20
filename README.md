@@ -2,7 +2,7 @@
 
 In brief, the LTNC `local_oauthdirectsso` redirects not logged users to a specific OAuth 2 login url and supports profile field auto-filling.
  
-![Lesterhuis Training & Consultancy](https://ltnc.nl/wp-content/uploads/2022/10/cropped-favicon-ltnc-180x180.png](https://ltnc.nl/wp-content/uploads/2025/04/LTNC_fc_pos_zwart.png)
+
 
 * Author: Luuk Verhoeven, [ldesignmedia.nl](https://ldesignmedia.nl/)
 * Author: Gemma Lesterhuis, [Lesterhuis Training & Consultancy](https://ltnc.nl/)
