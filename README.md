@@ -60,11 +60,23 @@ This plugin uses Moodle's standard event system to provide seamless integration 
 
 This event-based approach ensures that profile fields are available to enrollment plugins immediately after login, solving timing issues that could occur with other implementations.
 
-## Security
+## Bug and Problem support
 
+This plugin is carefully developed and thoroughly tested, but bugs and problems can always appear.
 If you discover any security related issues, please email [servicedesk@ltnc.nl](mailto:servicedesk@ltnc.nl) instead of using the issue tracker.
+
+Please bear in mind that bug and problem support is not free of charge. This is with the exception of developers that report and suggest a solution by creating a pull request. 
+Support is included for customers with an active LTNC Moodle Addon Maintenance Program subscription. For more information send an email to [sales@ltnc.nl](mailto:sales@ltnc.nl)
+
+## Feature proposal
+We are aware that members of the community will have other needs and would love to see them solved by this plugin. We are always interested to read about your feature proposals or even get a pull request from you, but please understand that we handle these as feature proposals and not as feature requests that we commit to implementing.
+
+If you would like to see your feature proposal developed and included in our code base, please send an email to [sales@ltnc.nl](mailto:sales@ltnc.nl) with your suggestion so we can send you a formal proposal for paid development. 
+
+Please bear in mind that new features will only be added to Main Branch and only for Moodle versions that are in Current Stable release states (see [Moodle Release](https://moodledev.io/general/releases) for more information).
+
+Customers with an active LTNC Moodle Addon Maintenance Program subscription may receive priority consideration for their feature proposals.
 
 ## License
 
 Local Oauthdirectsso code is provided freely as open source software, under version 3 of the GNU General Public License.
-The 'interface design' and 'working' around this module is copyright and licenced under Creative Commons: CC BY-SA 
