@@ -66,4 +66,5 @@ If you discover any security related issues, please email [servicedesk@ltnc.nl](
 
 ## License
 
-Freeware -  Please see https://ltnc.nl/ltnc-plugin-freeware-licentie for more information.
+Local Oauthdirectsso code is provided freely as open source software, under version 3 of the GNU General Public License.
+The 'interface design' and 'working' around this module is copyright and licenced under Creative Commons: CC BY-SA 
