@@ -2,6 +2,7 @@
 
 In brief, the LTNC `local_oauthdirectsso` redirects not logged users to a specific OAuth 2 login url and supports profile field auto-filling.
  
+![Lesterhuis Training & Consultancy](https://ltnc.nl/wp-content/uploads/2025/04/LTNC_fc_pos_zwart.png)
 
 
 * Author: Luuk Verhoeven, [ldesignmedia.nl](https://ldesignmedia.nl/)
@@ -50,7 +51,7 @@ This plugin uses Moodle's standard event system to provide seamless integration 
 
 2. **Standard Moodle events**: After updating profile fields, the plugin triggers the standard `user_updated` event that enrollment plugins can listen for.
 
-3. **Compatible with enrol_attribute**: We use Moodle default events (user_created and user_loggedin) to place the value in the user profile field. This way it is compatable to most Moodle Enrolment methodes. 
+3. **Compatible with multiple enrollment methods**: Works with any enrollment plugin that listens to standard Moodle events, including `enrol_attributes`, `enrol_auto`, `local_profilecohort`, and others. We use Moodle's core events (user_created and user_loggedin) to update profile fields, making it compatible with virtually all enrollment methods that follow Moodle standards.
 
 4. **No special configuration needed**: Other plugins don't need to be modified to work with OAuth2 Direct SSO, as long as they follow Moodle standards.
 

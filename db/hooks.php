@@ -25,12 +25,7 @@
  **/
 defined('MOODLE_INTERNAL') || die;
 
-// Only add Moodle 4.4 forward.
-if (class_exists(\core\hook\output\before_http_headers::class)) {
+// HTTP header hooks are deprecated and no longer used.
+// We now use standard Moodle events instead (see db/events.php).
+$callbacks = [];
 
-    $callbacks[] = [
-        'hook' => \core\hook\output\before_http_headers::class,
-        'callback' => [\local_oauthdirectsso\hooks\before_http_headers::class, 'callback'],
-        'priority' => 1000,
-    ];
-}

@@ -15,6 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * @deprecated since 4.5.3 - No longer used, replaced by event-based approach
  * Before http headers
  *
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -35,6 +36,7 @@ use local_oauthdirectsso\helper;
 use local_oauthdirectsso\oauth_config;
 
 /**
+ * @deprecated since 4.5.3 - No longer used, replaced by event-based approach
  * Class before_http_headers
  *
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -53,12 +55,19 @@ class before_http_headers {
     protected const COOKIE_NAME = 'local_oauthdirectsso_oauthissuerid';
 
     /**
+     * @deprecated since 4.5.3 - No longer used, replaced by event-based approach
      * Things to execute during callback
      *
      * @return void
      */
     public static function callback(): void {
+        debugging('Method before_http_headers::callback() is deprecated. ' .
+            'The plugin now uses standard Moodle events instead.', DEBUG_DEVELOPER);
+
+        // Legacy code retained for reference only - not executed
+        /*
         global $USER, $_COOKIE, $DB;
+
 
         // Check if the user is logged in.
         if (!isloggedin()) {
@@ -129,7 +138,7 @@ class before_http_headers {
             $USER->$field = $config->profilefield_value;
             user_update_user($USER, false);
         }
-
+        */
     }
 
 }

@@ -35,6 +35,7 @@ Types of changes
 - Ensured high event priority to guarantee proper execution order
 ### Changed
 - Replaced before_http_headers hook with standard Moodle events for better compatibility
+- Marked deprecated HTTP header related code as deprecated for future removal
 - Simplified code for better maintainability
 - Removed dependency on cookies for OAuth issuer ID tracking
 - Improved logging and debugging capabilities

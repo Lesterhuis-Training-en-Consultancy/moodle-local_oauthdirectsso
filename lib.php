@@ -57,17 +57,14 @@ function local_oauthdirectsso_inplace_editable(string $itemtype, int $itemid, $n
 }
 
 /**
+ * @deprecated since 4.5.3 - No longer used, replaced by event-based approach
  * Execute before http headers.
  *
  * @return void
  */
 function local_oauthdirectsso_before_http_headers(): void {
-
-    // If class exists, no more need to run from here, as hook has been implemented.
-    // This shouldn't execute anyway in Moodle 4.4 forward, but just in case.
-    if (class_exists(\core\hook\output\before_http_headers::class)) {
-        return;
-    }
-
-    \local_oauthdirectsso\hooks\before_http_headers::callback();
+    // This function is deprecated and no longer used.
+    // We now use standard Moodle events instead (see db/events.php).
+    debugging('Function local_oauthdirectsso_before_http_headers() is deprecated. ' .
+        'The plugin now uses standard Moodle events instead.', DEBUG_DEVELOPER);
 }
