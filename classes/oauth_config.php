@@ -220,15 +220,13 @@ class oauth_config {
         global $SESSION;
 
         if ($SESSION->local_oauthdirectsso->legacy) {
-
             // Correctness of url has already been evaluated by now.
             $url = get_config('local_oauthdirectsso', 'url');
-
             return new moodle_url($url);
         }
 
-        setcookie('local_oauthdirectsso_oauthissuerid', $oauthissuerid, time() + 3600, '/');
-
+        // We no longer use a cookie for the oauthissuerid
+        // The event handlers retrieve the oauthissuerid directly from the database
         return new moodle_url(
             '/auth/oauth2/login.php',
             [
