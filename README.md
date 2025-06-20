@@ -51,7 +51,7 @@ This plugin uses Moodle's standard event system to provide seamless integration 
 
 2. **Standard Moodle events**: After updating profile fields, the plugin triggers the standard `user_updated` event that enrollment plugins can listen for.
 
-3. **Compatible with multiple enrollment methods**: Works with any enrollment plugin that listens to standard Moodle events, including `enrol_attributes`, `enrol_auto`, `local_profilecohort`, and others. We use Moodle's core events (user_created and user_loggedin) to update profile fields, making it compatible with virtually all enrollment methods that follow Moodle standards.
+3. **Compatible with multiple enrollment methods**: Works with any enrollment plugin that listens to standard Moodle events, by example `enrol_attributes`. We use Moodle's core events (user_created and user_loggedin) to update profile fields, making it compatible with virtually all enrollment methods that follow Moodle standards.
 
 4. **No special configuration needed**: Other plugins don't need to be modified to work with OAuth2 Direct SSO, as long as they follow Moodle standards.
 
