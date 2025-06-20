@@ -29,8 +29,21 @@ Types of changes
 * **Security** in case of vulnerabilities.
 
 
+# Version (4.5.3) - 2025-06-20
+### Added
+- Implemented event-based approach for profile field processing to fix timing issues when filling profile fields
+- Ensured high event priority to guarantee proper execution order
+### Changed
+- Replaced before_http_headers hook with standard Moodle events for better compatibility
+- Simplified code for better maintainability
+- Removed dependency on cookies for OAuth issuer ID tracking
+- Improved logging and debugging capabilities
+- Enhanced version compatibility across Moodle 4.1-4.5
+- Fixed timing issues when filling profile fields
+
 # Version (4.5.1) - 2025-02-20
 - Add new option that allows setting a value to profile field if this wasn't enabled #10
+- Support for processing multiple OAuth2 linked accounts per user
 
 # Version (4.5.0) - 2024-09-13
 - Tested Moodle 4.5
